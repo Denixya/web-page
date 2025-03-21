@@ -1,7 +1,7 @@
 <nav>
   <ul>
-    <li><a href="" target="_self">Home</a></li>
-    <li><a href="" target="_self">Proyectos personales</a></li>
-    <li><a href="" target="_self">Currículum</a></li>
+    @for (item of items(); track $index) {
+      <li><a [routerLink]="item.link">{{item.label}}</a></li>
+    }
   </ul>
 </nav>
