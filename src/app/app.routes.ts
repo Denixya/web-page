@@ -14,6 +14,10 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/curriculum/curriculum.component').then((c) => c.CurriculumComponent)
   },
   {
+    path:'dragonball',
+    loadComponent: () => import('./pages/dragonball-page/dragonball-page.component').then((c) => c.DragonballPageComponent)
+  },
+  {
     path: '**',
     redirectTo: 'home'
   }

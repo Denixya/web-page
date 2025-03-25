@@ -23,6 +23,9 @@ export class AppComponent {
     },{
       label: 'Curriculum',
       link: '/cv'
+    },{
+      label: 'DB',
+      link: '/dragonball'
     }
   ]
 }
