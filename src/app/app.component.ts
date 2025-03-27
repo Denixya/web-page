@@ -8,24 +8,26 @@ import { HeaderItem } from './components/header/models/header-item.model';
   selector: 'app-root',
   imports: [RouterOutlet, FooterComponent, HeaderComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = 'web-page';
   headerItems: HeaderItem[] = [
     {
       label: 'Inicio',
-      link: '/home'
+      link: '/home',
     },
     {
       label: 'Proyectos personales',
-      link: '/projects'
-    },{
+      link: '/projects',
+    },
+    {
       label: 'Curriculum',
-      link: '/cv'
-    },{
-      label: 'DB',
-      link: '/dragonball'
-    }
-  ]
+      link: '/cv',
+    },
+    {
+      label: 'Productos',
+      link: '/product-list',
+    },
+  ];
 }

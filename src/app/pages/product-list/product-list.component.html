@@ -1,0 +1,35 @@
+<h1>Lista de Productos</h1>
+
+<input
+  type="text"
+  placeholder="Nombre del producto"
+  [value]="newProductName()"
+  (change)="newProductName.set(productName.value)"
+  (input)="newProductName.set(productName.value)"
+  #productName
+/>
+<input
+  type="number"
+  placeholder="precio"
+  [value]="newProductPrice()"
+  (change)="newProductPrice.set(+productPrice.value)"
+  (input)="newProductPrice.set(+productPrice.value)"
+  #productPrice
+/>
+<button (click)="addProduct()">Añadir nuevo</button>
+<p class="errorMessage"></p>
+
+<ol>
+  @if (productsSignal().length>0) { @for (item of productsSignal(); track
+  $index) {
+  <app-product-item
+    [product]="item"
+    (deleteProductEvent)="onDeleteProduct($event)"
+  >
+  </app-product-item>
+  }
+  <li>Precio total : {{ totalPrice() }}</li>
+  } @else {
+  <li>No hay productos en la lista</li>
+  }
+</ol>

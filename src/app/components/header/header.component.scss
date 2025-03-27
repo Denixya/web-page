@@ -1,9 +1,9 @@
 nav {
-  position: sticky;   
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;  
+  z-index: 1000;
 }
 
 ul {
@@ -15,20 +15,26 @@ ul {
 li {
   font-size: large;
   flex: 1;
-  display: inline-block; 
+  display: inline-block;
 }
 
-a:link, a:visited {
-  background-color: rgb(88, 100, 121); 
+a:link,
+a:visited {
+  background-color: rgb(88, 100, 121);
   color: white;
   padding: 15px 25px;
-  text-decoration:none;
+  text-decoration: none;
   font-weight: bold;
-  display:block; 
+  display: block;
   text-align: center;
 }
 
-a:hover, a:active {
+a:hover,
+a:active {
   background-color: rgb(143, 145, 161);
   transition: background-color 0.5s;
+}
+
+.active-link {
+  background-color: rgb(143, 145, 161) !important;
 }
