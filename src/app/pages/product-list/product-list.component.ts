@@ -1,4 +1,4 @@
-import { Component, effect, signal } from '@angular/core';
+import { Component, effect, inject, signal } from '@angular/core';
 import { Product } from './models/product.model';
 import { CommonModule } from '@angular/common';
 import { ProductItemComponent } from '../../components/product-item/product-item.component';

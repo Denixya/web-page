@@ -26,8 +26,8 @@ export class AppComponent {
       link: '/cv',
     },
     {
-      label: 'Productos',
-      link: '/product-list',
+      label: 'Usuarios',
+      link: '/user-list',
     },
   ];
 }

@@ -28,6 +28,13 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'user-list',
+    loadComponent: () =>
+      import('./pages/user-list/user-list.component').then(
+        (c) => c.UserListComponent
+      ),
+  },
+  {
     path: '**',
     redirectTo: 'home',
   },
