@@ -1,34 +1,35 @@
-import {
-  AfterContentInit,
-  Component,
-  inject,
-  OnDestroy,
-  OnInit,
-} from '@angular/core';
+import { Component, DestroyRef, inject, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
-import { Subscription } from 'rxjs';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import {
-  HttpClientModule,
-  provideHttpClient,
-  withInterceptorsFromDi,
-} from '@angular/common/http';
+import { catchError, of, Subscription } from 'rxjs';
+import { takeUntilDestroyed, toSignal } from '@angular/core/rxjs-interop';
+import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-user-list',
-  imports: [],
-  providers: [HttpClientModule],
+  imports: [JsonPipe],
+  providers: [],
   templateUrl: './user-list.component.html',
   styleUrl: './user-list.component.scss',
 })
 export class UserListComponent implements OnInit {
   readonly #userService = inject(UserService);
+  readonly #destroyRef = inject(DestroyRef);
   userSubscription!: Subscription;
+
+  usersSignal = toSignal(
+    this.#userService.getUsers().pipe(
+      catchError((error) => {
+        console.error('Error fetching users:', error);
+        return of([]);
+      })
+    ),
+    { initialValue: [] }
+  );
 
   ngOnInit(): void {
     this.userSubscription = this.#userService
       .getUsers()
-      .pipe(takeUntilDestroyed())
+      .pipe(takeUntilDestroyed(this.#destroyRef))
       .subscribe((users) => {
         console.log(users);
       });
