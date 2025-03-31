@@ -4,10 +4,18 @@
     <li>
       <label for="firstName">Nombre:</label>
       <input id="firstName" type="text" formControlName="firstName" />
+      @if (userForm.get('firstName')?.invalid &&
+      userForm.get('firstName')?.touched) {
+      <span style="color: red"> El nombre es obligatorio.</span>
+      }
     </li>
     <li>
       <label for="lastName">Apellido:</label>
       <input id="lastName" type="text" formControlName="lastName" />
+      @if (userForm.get('lastName')?.invalid &&
+      userForm.get('lastName')?.touched) {
+      <span style="color: red"> Demasiado largo.</span>
+      }
     </li>
     <li>
       <label for="birthday">Fecha de Nacimiento:</label>
@@ -18,7 +26,7 @@
       <input id="dni" type="text" formControlName="dni" />
     </li>
     <li>
-      <button type="submit">Enviar</button>
+      <button type="submit" [disabled]="userForm.invalid">Enviar</button>
     </li>
   </ul>
 </form>

@@ -1,5 +1,10 @@
 import { Component, inject } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-user-form',
@@ -9,11 +14,11 @@ import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 })
 export class UserFormComponent {
   userForm: FormGroup;
-  #fb = inject(FormBuilder);
+  readonly #fb = inject(FormBuilder);
   constructor() {
     this.userForm = this.#fb.group({
-      firstName: [''],
-      lastName: [''],
+      firstName: ['', [Validators.required, Validators.minLength(3)]],
+      lastName: ['', [Validators.maxLength(5)]],
       birthday: [''],
       dni: [''],
     });
