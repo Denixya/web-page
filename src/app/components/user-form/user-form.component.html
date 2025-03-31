@@ -1,0 +1,24 @@
+<h3>Formulario de Usuario</h3>
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <ul>
+    <li>
+      <label for="firstName">Nombre:</label>
+      <input id="firstName" type="text" formControlName="firstName" />
+    </li>
+    <li>
+      <label for="lastName">Apellido:</label>
+      <input id="lastName" type="text" formControlName="lastName" />
+    </li>
+    <li>
+      <label for="birthday">Fecha de Nacimiento:</label>
+      <input id="birthday" type="date" formControlName="birthday" />
+    </li>
+    <li>
+      <label for="dni">DNI:</label>
+      <input id="dni" type="text" formControlName="dni" />
+    </li>
+    <li>
+      <button type="submit">Enviar</button>
+    </li>
+  </ul>
+</form>

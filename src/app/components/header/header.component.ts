@@ -10,4 +10,8 @@ import { HeaderItem } from './models/header-item.model';
 })
 export class HeaderComponent {
   items = input.required<HeaderItem[]>();
+  dropdownOpen: { [key: string]: boolean } = {};
+  toggleDropdown(label: string) {
+    this.dropdownOpen[label] = !this.dropdownOpen[label];
+  }
 }

@@ -1,4 +1,4 @@
-<nav>
+<!-- <nav>
   <ul>
     @for (item of items(); track $index) {
     <li>
@@ -10,5 +10,30 @@
       >
     </li>
     }
+  </ul>
+</nav> -->
+
+<nav>
+  <ul>
+    @for (item of items(); track $index) { @if (item.link) {
+    <li>
+      <a [routerLink]="item.link" routerLinkActive="active-link">
+        {{ item.label }}
+      </a>
+    </li>
+    } @if (item.submenu) {
+    <li class="dropdown">
+      <span>{{ item.label }}</span>
+      <ul class="submenu">
+        @for (subItem of item.submenu; track $index) {
+        <li>
+          <a [routerLink]="subItem.link" routerLinkActive="active-link">
+            {{ subItem.label }}
+          </a>
+        </li>
+        }
+      </ul>
+    </li>
+    } }
   </ul>
 </nav>

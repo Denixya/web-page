@@ -1,0 +1,11 @@
+<h3>Lista de Tareas</h3>
+<ul>
+  @if (todoSignal()!.length > 0 ) { @for (todo of todoSignal(); track $index) {
+  <li>
+    <strong>{{ todo.title }}</strong> -
+    {{ todo.completed ? "✅ Completado" : "❌ Pendiente" }}
+  </li>
+  } } @else{
+  <li>No hay tareas disponibles</li>
+  }
+</ul>

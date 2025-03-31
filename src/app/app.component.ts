@@ -18,16 +18,15 @@ export class AppComponent {
       link: '/home',
     },
     {
-      label: 'Proyectos personales',
-      link: '/projects',
-    },
-    {
       label: 'Curriculum',
       link: '/cv',
     },
     {
-      label: 'Usuarios',
-      link: '/user-list',
+      label: 'Proyectos',
+      submenu: [
+        { label: 'Formulario', link: '/projects/form' },
+        { label: 'ToDo', link: '/projects/todo' },
+      ],
     },
   ];
 }
