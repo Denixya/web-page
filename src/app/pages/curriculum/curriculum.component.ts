@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
-
+import { CardComponent } from '../../components/card/card.component';
 @Component({
   selector: 'app-curriculum',
-  imports: [],
+  imports: [CardComponent],
   templateUrl: './curriculum.component.html',
-  styleUrl: './curriculum.component.scss'
+  styleUrl: './curriculum.component.scss',
 })
-export class CurriculumComponent {
-
-}
+export class CurriculumComponent {}

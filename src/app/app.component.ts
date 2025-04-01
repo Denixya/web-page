@@ -18,16 +18,12 @@ export class AppComponent {
       link: '/home',
     },
     {
-      label: 'Proyectos personales',
-      link: '/projects',
-    },
-    {
       label: 'Curriculum',
       link: '/cv',
     },
     {
       label: 'Proyectos',
-      link: [
+      links: [
         {
           label: 'Proyecto 1',
           link: '/projects/project1',

@@ -1,4 +1,5 @@
 export interface HeaderItem {
   label: string;
-  link: string | HeaderItem[];
+  link?: string;
+  links?: HeaderItem[];
 }
