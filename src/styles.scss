@@ -9,10 +9,20 @@
 
 .navbar.custom-nav {
   background-color: vars.$nav-background-color !important;
-  /* Aplica el color al texto del navbar */
 }
 
 .navbar.custom-nav .nav-link {
   color: vars.$nav-color !important;
-  /* Aplica el color a los enlaces del navbar */
+}
+
+.dropdown-menu.custom-dropdown {
+  background-color: vars.$nav-background-color !important;
+}
+
+.dropdown-item.custom-dropdown-item {
+  color: vars.$nav-color !important;
+}
+
+.dropdown-item.custom-dropdown-item:hover {
+  background-color: blue !important;
 }

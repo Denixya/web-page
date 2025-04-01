@@ -40,10 +40,10 @@
               >
                 {{ item.label }}
               </a>
-              <ul class="dropdown-menu">
+              <ul class="dropdown-menu custom-dropdown">
                 @for (dropItem of item.links; track $index) {
                   <li>
-                    <a class="dropdown-item" [routerLink]="dropItem.link">{{
+                    <a class="dropdown-item custom-dropdown-item" [routerLink]="dropItem.link">{{
                       dropItem.label
                     }}</a>
                   </li>
