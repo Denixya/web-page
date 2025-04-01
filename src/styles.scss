@@ -1,38 +1,18 @@
 @forward './styles/reset';
 
-html,
-body {
-  background-color: rgb(44, 44, 44) !important;
-}
+@use './styles/variables' as vars;
 
 .layout {
   margin: 0 10rem;
   background-color: transparent;
 }
 
-:root[data-bs-theme="deny"] {
-  --bs-body-bg: #2c2c2c;
-  /* Fondo del cuerpo */
-  --bs-body-color: #f8f9fa;
-  /* Color del texto */
-  --bs-navbar-bg: #3a3a3a;
-  /* Fondo del navbar */
-  --bs-navbar-color: #ff0000;
-  /* Color del texto del navbar */
-  --bs-dropdown-bg: #444444;
-  /* Fondo del dropdown */
-  --bs-dropdown-link-color: #ffffff;
-  /* Color de los enlaces del dropdown */
-  --bs-dropdown-link-hover-bg: #555555;
-  /* Fondo al pasar el mouse por un enlace */
-}
-
-.navbar {
-  color: var(--bs-navbar-color) !important;
+.navbar.custom-nav {
+  background-color: vars.$nav-background-color !important;
   /* Aplica el color al texto del navbar */
 }
 
-.navbar .nav-link {
-  color: var(--bs-navbar-color) !important;
+.navbar.custom-nav .nav-link {
+  color: vars.$nav-color !important;
   /* Aplica el color a los enlaces del navbar */
 }
