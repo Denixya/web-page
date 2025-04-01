@@ -26,6 +26,8 @@
                 class="nav-link active px-4"
                 aria-current="page"
                 [routerLink]="item.link"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
                 >{{ item.label }}</a
               >
             </li>
@@ -43,9 +45,13 @@
               <ul class="dropdown-menu custom-dropdown">
                 @for (dropItem of item.links; track $index) {
                   <li>
-                    <a class="dropdown-item custom-dropdown-item" [routerLink]="dropItem.link">{{
-                      dropItem.label
-                    }}</a>
+                    <a
+                      class="dropdown-item custom-dropdown-item"
+                      [routerLink]="dropItem.link"
+                      routerLinkActive="active"
+                      [routerLinkActiveOptions]="{ exact: true }"
+                      >{{ dropItem.label }}</a
+                    >
                   </li>
                 }
               </ul>

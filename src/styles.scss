@@ -2,8 +2,11 @@
 
 @use './styles/variables' as vars;
 
+html body {
+  background-color: rgb(27, 27, 27);
+}
+
 .layout {
-  margin: 0 10rem;
   background-color: transparent;
 }
 
@@ -24,5 +27,18 @@
 }
 
 .dropdown-item.custom-dropdown-item:hover {
-  background-color: blue !important;
+  background-color: rgb(103, 106, 124);
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.navbar-toggler {
+  color: white !important;
+  /* Cambia el color del ícono */
+  border-color: white !important;
+  /* Cambia el color del borde */
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='white' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+  /* Cambia el ícono del toggler a blanco */
 }
