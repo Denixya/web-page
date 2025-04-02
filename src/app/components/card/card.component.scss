@@ -1,26 +1,18 @@
+@use '../../../styles/variables' as vars;
+
 .cardDiv {
-  background-color: rgb(103, 106, 124);
+  background-color: vars.$card-bg-color;
   margin: 0.25rem auto;
-  /* Márgenes predeterminados */
   padding: 1rem;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
-  /* Márgenes responsivos */
   @media (min-width: 768px) {
     margin: 1rem auto;
-    /* Márgenes más grandes en pantallas medianas */
     max-width: 90%;
-    /* Limita el ancho para que no ocupe toda la pantalla */
   }
 
-  @media (min-width: 1200px) {
-    margin: 2rem auto;
-    /* Márgenes aún más grandes en pantallas grandes */
-    max-width: 75%;
-    /* Reduce el ancho en pantallas grandes */
-  }
 }
 
 img {
@@ -35,9 +27,7 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* Centra verticalmente el contenido */
   align-items: center;
-  /* Centra horizontalmente el contenido */
 }
 
 h2 {
@@ -46,7 +36,6 @@ h2 {
   font-size: larger;
   font-weight: bold;
   text-align: center;
-  /* Asegura que el texto esté centrado */
 }
 
 p {

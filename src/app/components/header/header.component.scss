@@ -1,18 +1,20 @@
+@use '../../../styles/variables' as vars;
+
 .navbar-nav .nav-link {
   min-width: 120px;
   text-align: center;
 }
 
 .nav-link.active {
-  background-color: rgb(103, 106, 124);
+  background-color: vars.$card-bg-color;
 }
 
 .nav-link:hover {
-  background-color: rgb(103, 106, 124);
+  background-color: vars.$card-bg-color;
   transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 
 .dropdown-item.active {
-  background-color: rgb(103, 106, 124);
+  background-color: vars.$card-bg-color;
 }
