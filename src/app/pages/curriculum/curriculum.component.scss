@@ -5,6 +5,11 @@
   padding: 1rem 0;
 }
 
+.about-description {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
 .timeline-card {
   position: relative;
   margin-left: 31px;
@@ -14,6 +19,10 @@
 
 .timeline-card:last-child {
   margin-bottom: 1rem;
+}
+
+.progress-bar {
+  background-color: lighten(vars.$cv-color-primary, 10%);
 }
 
 .timeline-card:before {
@@ -64,6 +73,18 @@
 
 .timeline-card-success:after {
   background-color: vars.$cv-color-secondary;
+}
+
+.timeline-card-info {
+  border-left-color: pink;
+}
+
+.timeline-card-info:before {
+  border-color: pink;
+}
+
+.timeline-card-info:after {
+  background-color: pink;
 }
 
 html {
