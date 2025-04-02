@@ -1,15 +1,18 @@
-footer {
-  background-color: rgb(88, 100, 121);
-  color: white;
-  padding: 10px;
-  position: sticky;   
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;  
+@use '../../../styles/variables' as vars;
+
+p {
+  margin: 0;
 }
 
-a {
-  color: rgb(156, 231, 253);
-  text-decoration:none;
+footer {
+  background-color: vars.$nav-background-color !important;
+  color: vars.$nav-color !important;
+  font-size: 0.9rem;
+  min-height: 56px;
+  max-height: 100px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  bottom: 0;
 }

@@ -2,14 +2,20 @@
 
 @use './styles/variables' as vars;
 
-html body {
-  background-color: rgb(27, 27, 27);
-}
 
 .layout {
   background-color: transparent;
+  margin: 112px 0 56px;
+  min-height: 100vh;
 }
 
+// General
+html body {
+  background-color: vars.$body-background-color !important;
+
+}
+
+// Menus
 .navbar.custom-nav {
   background-color: vars.$nav-background-color !important;
 }
@@ -32,13 +38,10 @@ html body {
 }
 
 .navbar-toggler {
-  color: white !important;
-  /* Cambia el color del ícono */
-  border-color: white !important;
-  /* Cambia el color del borde */
+  color: vars.$nav-color !important;
+  border-color: vars.$nav-color !important;
 }
 
 .navbar-toggler-icon {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='white' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
-  /* Cambia el ícono del toggler a blanco */
 }

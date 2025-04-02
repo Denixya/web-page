@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-card',
-  imports: [],
   templateUrl: './card.component.html',
-  styleUrl: './card.component.scss'
+  styleUrls: ['./card.component.scss'],
 })
 export class CardComponent {
-
+  imageSrc = input<string>();
+  imageAlt = input<string>();
+  title = input<string>();
+  description = input<string>();
 }
