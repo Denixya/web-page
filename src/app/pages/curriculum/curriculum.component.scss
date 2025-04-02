@@ -122,7 +122,8 @@ footer a:not(.nav-link) {
 }
 
 .cv-container {
-  margin: 1.5rem;
+  margin: 1.5rem auto;
+  max-width: 90%;
 }
 
 @media (min-width: 48em) {
@@ -143,54 +144,6 @@ footer a:not(.nav-link) {
   }
 }
 
-@media print {
-
-  // ?
-  body {
-    background-color: vars.$cv-color-light;
-  }
-
-  // ?
-  .container {
-    width: auto;
-    max-width: 100%;
-    padding: 0;
-  }
-
-  .cover,
-  .cover-bg {
-    border-radius: 0;
-  }
-
-  .cover.shadow-lg {
-    box-shadow: none !important;
-  }
-
-  .cover-bg {
-    padding: 5rem !important;
-    padding-bottom: 10px !important;
-  }
-
-  .avatar {
-    margin-top: -10px;
-  }
-
-  .about-section {
-    padding: 6.5rem 5rem 2rem !important;
-  }
-
-  .skills-section,
-  .work-experience-section,
-  .education-section {
-    padding: 1.5rem 5rem 2rem !important;
-  }
-
-  .page-break {
-    padding-top: 5rem;
-    page-break-before: always;
-  }
-}
-
 
 @media print {
 
@@ -202,7 +155,7 @@ footer a:not(.nav-link) {
   // ?
   .container {
     margin: 1rem auto;
-    max-width: 100%;
+    max-width: 90%;
     padding: 0;
   }
 
