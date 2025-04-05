@@ -25,12 +25,12 @@ export class AppComponent {
       label: 'Proyectos',
       links: [
         {
-          label: 'Proyecto 1',
-          link: '/projects/project1',
+          label: 'Inicio Proyectos',
+          link: '/projects',
         },
         {
-          label: 'Proyecto 2',
-          link: '/projects/project2',
+          label: 'Proyecto WoW',
+          link: '/projects/wow',
         },
       ],
     },
