@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/**/*.js",
+      "src": "api/wow.js",
       "use": "@vercel/node"
     },
     {
@@ -13,11 +13,11 @@
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/api/$1"
+      "dest": "/api/wow.js"
     },
     {
       "src": "/(.*)",
-      "dest": "dist/WEB-PAGE/$1"
+      "dest": "/dist/WEB-PAGE/$1"
     }
   ]
 }

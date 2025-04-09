@@ -1,6 +1,3 @@
-// Si tu entorno Node es 18 o superior, puedes usar el built-in fetch. De lo contrario, instala y requiere 'node-fetch'.
-const fetch = require("node-fetch");
-
 // Variables globales para almacenar el token y su expiración (cache)
 let cachedToken = null;
 let tokenExpiresAt = null;
@@ -31,7 +28,7 @@ async function getAccessToken() {
   );
 
   // Realizamos la petición para obtener el token
-  const tokenResponse = await fetch("https://us.battle.net/oauth/token", {
+  const tokenResponse = await fetch("https://oauth.battle.net/token", {
     method: "POST",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
@@ -65,13 +62,13 @@ export default async function handler(req, res) {
     const token = await getAccessToken();
 
     // Determinamos el endpoint solicitado a partir del parámetro "endpoint"
-    const endpoint = req.query.endpoint || "realms";
+    const endpoint = req.query.endpoint || "guild";
 
     let apiUrl = "";
-    // Por ejemplo, configuramos el endpoint "realms"
-    if (endpoint === "realms") {
+    // Por ejemplo, configuramos el endpoint "guild"
+    if (endpoint === "guild") {
       apiUrl =
-        "https://us.api.blizzard.com/data/wow/realm/index?namespace=dynamic-us&locale=en_US";
+        "https://eu.api.blizzard.com/data/wow/guild/zuljin/breakdown?namespace=profile-eu&locale=es_ES";
     } else {
       // Si el endpoint no está soportado, respondemos con error
       res.status(400).json({ error: "Endpoint no soportado." });
@@ -79,7 +76,13 @@ export default async function handler(req, res) {
     }
 
     // Llamamos a la API de Blizzard agregando el parámetro "access_token"
-    const apiResponse = await fetch(`${apiUrl}&access_token=${token}`);
+    const apiResponse = await fetch(apiUrl, {
+      method: "get",
+      headers: new Headers({
+        Authorization: "Bearer " + token,
+        "Content-Type": "application/json",
+      }),
+    });
 
     if (!apiResponse.ok) {
       const errorData = await apiResponse.json();
