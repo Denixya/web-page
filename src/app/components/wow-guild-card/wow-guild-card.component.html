@@ -1,0 +1,35 @@
+<div class="wow-container my-3 my-lg-5">
+  <div><h1>BREAKDOWN GUILD</h1></div>
+
+  <div class="row gx-4 gy-4 itemContainer">
+    @for (item of wowItems(); track item.name) {
+      @if (item.data) {
+        <div class="col-12 col-md-6 d-flex">
+          <div class="wow-card d-flex flex-column flex-md-row w-100">
+            <div class="imgContainer">
+              <img [src]="item.data.avatarSrc" [alt]="item.name" />
+            </div>
+            <div
+              class="infoContainer flex-grow-1 d-flex flex-column justify-content-start px-3 py-2"
+            >
+              <div>
+                <h2>{{ item.name }}</h2>
+                <span>{{ item.realmName }}</span>
+                <p class="specContainer">
+                  <img [src]="favicon" [alt]="item.data.className" />
+                  <img [src]="favicon" [alt]="item.data.specName" />
+                  <span>{{ item.data.specName }}</span>
+                </p>
+              </div>
+              <p class="mb-0">
+                iLvl: {{ item.data.ilvl }} | Score: {{ item.data.score }}
+              </p>
+            </div>
+          </div>
+        </div>
+      } @else {
+        <p>No se han obtenido datos de personaje</p>
+      }
+    }
+  </div>
+</div>
