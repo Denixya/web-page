@@ -1,2 +1,16 @@
 <app-work-in-progress [elementName]="'WoW API'"></app-work-in-progress>
-<app-wow-guild-card [wowItems]="wowItems()" />
+<div class="wow-container my-3 my-lg-5">
+  <div><h1>BREAKDOWN GUILD</h1></div>
+
+  <div class="row gx-4 gy-4 itemContainer">
+    @for (item of wowItems(); track item.name) {
+      @if (item.data) {
+        <div class="col-12 col-md-6 d-flex">
+          <app-wow-guild-card [item]="item" />
+        </div>
+      } @else {
+        <p>No se han obtenido datos de personaje</p>
+      }
+    }
+  </div>
+</div>

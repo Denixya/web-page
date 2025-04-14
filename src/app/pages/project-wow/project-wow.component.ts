@@ -15,7 +15,7 @@ export class ProjectWowComponent {
       name: 'Drakiria',
       realmName: "Zul'jin",
       data: {
-        avatarSrc: 'drakiria.png',
+        avatarSrc: 'favicon.ico',
         avatarIconSrc: 'favicon.ico',
         factionName: 'Alliance',
         ilvl: 664,
@@ -28,7 +28,7 @@ export class ProjectWowComponent {
       name: 'Eliora',
       realmName: "Zul'jin",
       data: {
-        avatarSrc: 'drakiria.png',
+        avatarSrc: 'favicon.ico',
         avatarIconSrc: 'favicon.ico',
         factionName: 'Horde',
         ilvl: 664,

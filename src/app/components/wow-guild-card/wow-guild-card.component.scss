@@ -1,27 +1,9 @@
 @use "../../../styles/variables" as vars;
 
-h1 {
-  color: vars.$cv-color-light;
-  margin-top: 1rem;
-  text-align: center;
-}
-
 p,
 span,
 h2 {
   color: vars.$cv-color-light;
-}
-
-.wow-container {
-  background-color: vars.$nav-background-color;
-  margin: 1.5rem auto;
-  padding: 1rem;
-  max-width: 90%;
-  border-radius: 10px;
-}
-
-.itemContainer {
-  padding: 1.2rem;
 }
 
 .wow-card {
@@ -48,7 +30,6 @@ h2 {
     height: auto;
     object-fit: cover;
     border-radius: 10px;
-    transform: scale(1.7);
   }
 }
 

@@ -62,13 +62,13 @@ export default async function handler(req, res) {
     const token = await getAccessToken();
 
     // Determinamos el endpoint solicitado a partir del parámetro "endpoint"
-    const endpoint = req.query.endpoint || "guild";
+    const endpoint = req.query.endpoint;
 
     let apiUrl = "";
     // Por ejemplo, configuramos el endpoint "guild"
     if (endpoint === "guild") {
       apiUrl =
-        "https://eu.api.blizzard.com/data/wow/guild/zuljin/breakdown?namespace=profile-eu&locale=es_ES";
+        "https://eu.api.blizzard.com/data/wow/guild/zuljin/breakdown/roster?namespace=profile-eu&locale=es_ES";
     } else {
       // Si el endpoint no está soportado, respondemos con error
       res.status(400).json({ error: "Endpoint no soportado." });
@@ -90,11 +90,101 @@ export default async function handler(req, res) {
       return;
     }
 
-    const apiData = await apiResponse.json();
-    // Devolvemos la respuesta al cliente Angular
-    res.status(200).json(apiData);
+    const rosterData = await apiResponse.json();
+
+    const guildData = await getGuildData(rosterData);
+
+    res.status(200).json(guildData);
   } catch (error) {
     console.error("Error en handler:", error);
     res.status(500).json({ error: error.message });
+  }
+}
+
+async function getGuildData(rosterData) {
+  const filteredMembers = await Promise.all(
+    rosterData.members
+      .filter((member) => member.rank === 1 || member.rank === 2)
+      .map(async (member) => {
+        const extraInfo = await processAdditionalData(member);
+        return {
+          name: member.character.name,
+          ...extraInfo,
+        };
+      }),
+  );
+
+  return filteredMembers;
+}
+
+async function processAdditionalData(member) {
+  const aditionalData = await Promise.all([
+    getCharacterData(member.character.name, member.character.realm.slug),
+    getMScoreData(member.character.name, member.character.realm.slug),
+    getMedia(member.character.name, member.character.realm.slug),
+  ]);
+  const [characterData, mScoreData, mediaData] = await Promise.all(
+    aditionalData.map((res) => res.json()),
+  );
+  return {
+    realm: characterData.realm.name,
+    class: characterData.character_class.name,
+    spec: characterData.active_spec.name,
+    title: characterData.active_title?.name,
+    faction: characterData.faction.name,
+    ilvl: Math.round(parseFloat(characterData.average_item_level)),
+    mScore: Math.round(parseFloat(mScoreData.current_mythic_rating?.rating)),
+    avatar: mediaData.assets[0].value,
+    inset: mediaData.assets[1].value,
+    mainRaw: mediaData.assets[2].value,
+  };
+}
+
+function getCharacterData(characterName, realmId) {
+  try {
+    const apiUrl = `https://eu.api.blizzard.com/profile/wow/character/${realmId}/${characterName.toLowerCase()}?namespace=profile-eu&locale=es_ES`;
+
+    const apiResponse = fetch(apiUrl, {
+      method: "get",
+      headers: new Headers({
+        Authorization: "Bearer " + cachedToken,
+        "Content-Type": "application/json",
+      }),
+    });
+    return apiResponse;
+  } catch {
+    throw new Error("Error al obtener personaje");
+  }
+}
+
+function getMScoreData(characterName, realmId) {
+  try {
+    const apiUrl = `https://eu.api.blizzard.com/profile/wow/character/${realmId}/${characterName.toLowerCase()}/mythic-keystone-profile?namespace=profile-eu&locale=es_ES`;
+    const apiResponse = fetch(apiUrl, {
+      method: "get",
+      headers: new Headers({
+        Authorization: "Bearer " + cachedToken,
+        "Content-Type": "application/json",
+      }),
+    });
+    return apiResponse;
+  } catch {
+    throw new Error("Error al obtener Puntuación");
+  }
+}
+
+function getMedia(characterName, realmId) {
+  try {
+    const apiUrl = `https://eu.api.blizzard.com/profile/wow/character/${realmId}/${characterName.toLowerCase()}/character-media?namespace=profile-eu&locale=es_ES`;
+    const apiResponse = fetch(apiUrl, {
+      method: "get",
+      headers: new Headers({
+        Authorization: "Bearer " + cachedToken,
+        "Content-Type": "application/json",
+      }),
+    });
+    return apiResponse;
+  } catch {
+    throw new Error("Error al obtener media");
   }
 }

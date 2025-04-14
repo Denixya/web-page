@@ -7,6 +7,5 @@ import { WowItem } from './models/wow-item.model';
   styleUrls: ['./wow-guild-card.component.scss'],
 })
 export class WowGuildCardComponent {
-  wowItems = input<WowItem[]>();
-  favicon = 'favicon.ico';
+  item = input<WowItem>();
 }
