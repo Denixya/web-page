@@ -15,9 +15,10 @@
       "src": "/api/(.*)",
       "dest": "/api/wow.js"
     },
+    { "handle": "filesystem" },
     {
       "src": "/(.*)",
-      "dest": "/dist/web-page/$1"
+      "dest": "/dist/web-page/index.html"
     }
   ]
 }
