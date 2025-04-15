@@ -1,41 +1,28 @@
-import { Component, signal } from '@angular/core';
-import { WorkInProgressComponent } from '../../components/work-in-progress/work-in-progress.component';
-import { WowItem } from '../../components/wow-guild-card/models/wow-item.model';
+import { Component, inject, signal } from '@angular/core';
 import { WowGuildCardComponent } from '../../components/wow-guild-card/wow-guild-card.component';
+import { WowGuildService } from '../../services/wow-guild.service';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { catchError, of } from 'rxjs';
+import { WowCharacter } from '../../components/wow-guild-card/models/wow-character.model';
 
 @Component({
   selector: 'app-project-wow',
-  imports: [WorkInProgressComponent, WowGuildCardComponent],
+  imports: [WowGuildCardComponent],
   templateUrl: './project-wow.component.html',
   styleUrl: './project-wow.component.scss',
 })
 export class ProjectWowComponent {
-  wowItems = signal<WowItem[]>([
+  private readonly guildService = inject(WowGuildService);
+
+  wowChars = toSignal(
+    this.guildService.getGuildRoster().pipe(
+      catchError((error) => {
+        console.error('Error fetching guild roster:', error);
+        return of([]);
+      }),
+    ),
     {
-      name: 'Drakiria',
-      realmName: "Zul'jin",
-      data: {
-        avatarSrc: 'favicon.ico',
-        avatarIconSrc: 'favicon.ico',
-        factionName: 'Alliance',
-        ilvl: 664,
-        className: 'Priest',
-        specName: 'Discipline',
-        score: 2675,
-      },
+      initialValue: [],
     },
-    {
-      name: 'Eliora',
-      realmName: "Zul'jin",
-      data: {
-        avatarSrc: 'favicon.ico',
-        avatarIconSrc: 'favicon.ico',
-        factionName: 'Horde',
-        ilvl: 664,
-        className: 'Priest',
-        specName: 'Holy',
-        score: 260,
-      },
-    },
-  ]);
+  );
 }

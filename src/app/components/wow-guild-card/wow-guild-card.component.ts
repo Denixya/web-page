@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { WowItem } from './models/wow-item.model';
+import { WowCharacter } from './models/wow-character.model';
 
 @Component({
   selector: 'app-wow-guild-card',
@@ -7,5 +7,5 @@ import { WowItem } from './models/wow-item.model';
   styleUrls: ['./wow-guild-card.component.scss'],
 })
 export class WowGuildCardComponent {
-  item = input<WowItem>();
+  char = input<WowCharacter>();
 }

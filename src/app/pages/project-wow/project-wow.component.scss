@@ -17,3 +17,15 @@ h1 {
 .itemContainer {
   padding: 1.2rem;
 }
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+
+  .spinner-border {
+    width: 3rem;
+    height: 3rem;
+  }
+}

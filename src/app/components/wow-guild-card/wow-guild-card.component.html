@@ -1,26 +1,27 @@
-@if (item()) {
+@if (char()) {
   <div class="wow-card d-flex flex-column flex-md-row w-100">
     <div class="imgContainer">
-      <img [src]="item()?.data?.avatarSrc" [alt]="item()?.name" />
+      <picture>
+        <source [srcset]="char()?.inset" media="(max-width: 767.98px)" />
+        <img [src]="char()?.avatar" [alt]="char()?.name" />
+      </picture>
     </div>
     <div
       class="infoContainer flex-grow-1 d-flex flex-column justify-content-start px-3 py-2"
     >
       <div>
-        <h2>{{ item()?.name }}</h2>
-        <span>{{ item()?.realmName }}</span>
+        <div class="nameContainer mb-4">
+          <h2>{{ char()?.name }}</h2>
+          @if (char()?.title) {
+            <span class="title">{{ char()?.title }}</span>
+          }
+        </div>
+
         <p class="specContainer">
-          <img
-            [src]="item()?.data?.avatarSrc"
-            [alt]="item()?.data?.className"
-          />
-          <img [src]="item()?.data?.avatarSrc" [alt]="item()?.data?.specName" />
-          <span>{{ item()?.data?.specName }}</span>
+          <span>{{ char()?.spec }}</span>
         </p>
       </div>
-      <p class="mb-0">
-        iLvl: {{ item()?.data?.ilvl }} | Score: {{ item()?.data?.score }}
-      </p>
+      <p class="mb-0">iLvl: {{ char()?.ilvl }} | Score: {{ char()?.mScore }}</p>
     </div>
   </div>
 }

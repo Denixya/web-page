@@ -58,6 +58,14 @@ async function getAccessToken() {
  */
 export default async function handler(req, res) {
   try {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
+    if (req.method === "OPTIONS") {
+      return res.status(200).end();
+    }
+
     // Obtenemos un token de acceso válido
     const token = await getAccessToken();
 
@@ -104,7 +112,9 @@ export default async function handler(req, res) {
 async function getGuildData(rosterData) {
   const filteredMembers = await Promise.all(
     rosterData.members
-      .filter((member) => member.rank === 1 || member.rank === 2)
+      .filter(
+        (member) => member.rank === 0 || member.rank === 4 || member.rank === 6,
+      )
       .map(async (member) => {
         const extraInfo = await processAdditionalData(member);
         return {
