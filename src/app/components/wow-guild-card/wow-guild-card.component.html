@@ -1,0 +1,27 @@
+@if (char()) {
+  <div class="wow-card d-flex flex-column flex-md-row w-100">
+    <div class="imgContainer">
+      <picture>
+        <source [srcset]="char()?.inset" media="(max-width: 767.98px)" />
+        <img [src]="char()?.avatar" [alt]="char()?.name" />
+      </picture>
+    </div>
+    <div
+      class="infoContainer flex-grow-1 d-flex flex-column justify-content-start px-3 py-2"
+    >
+      <div>
+        <div class="nameContainer mb-4">
+          <h2>{{ char()?.name }}</h2>
+          @if (char()?.title) {
+            <span class="title">{{ char()?.title }}</span>
+          }
+        </div>
+
+        <p class="specContainer">
+          <span>{{ char()?.spec }}</span>
+        </p>
+      </div>
+      <p class="mb-0">iLvl: {{ char()?.ilvl }} | Score: {{ char()?.mScore }}</p>
+    </div>
+  </div>
+}

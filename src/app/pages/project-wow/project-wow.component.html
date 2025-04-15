@@ -1,1 +1,19 @@
-<app-work-in-progress [elementName]="'WoW API'"></app-work-in-progress>
+<div class="wow-container my-3 my-lg-5">
+  <div><h1>Gremio BREAKDOWN</h1></div>
+
+  @if (wowChars().length > 0) {
+    <div class="row gx-4 gy-4 itemContainer">
+      @for (char of wowChars(); track char.name) {
+        <div class="col-12 col-md-6">
+          <app-wow-guild-card [char]="char" />
+        </div>
+      }
+    </div>
+  } @else {
+    <div class="loading-container">
+      <div class="spinner-border text-light" role="status">
+        <span class="visually-hidden">Cargando...</span>
+      </div>
+    </div>
+  }
+</div>

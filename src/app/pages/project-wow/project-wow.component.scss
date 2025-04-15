@@ -1,0 +1,31 @@
+@use "../../../styles/variables" as vars;
+
+.wow-container {
+  background-color: vars.$nav-background-color;
+  margin: 1.5rem auto;
+  padding: 1rem;
+  max-width: 90%;
+  border-radius: 10px;
+}
+
+h1 {
+  color: vars.$cv-color-light;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.itemContainer {
+  padding: 1.2rem;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+
+  .spinner-border {
+    width: 3rem;
+    height: 3rem;
+  }
+}
