@@ -6,13 +6,13 @@
       "use": "@vercel/node"
     },
     {
-      "src": "dist/web-page/**/*",
+      "src": "dist/web-page/browser/**/*",
       "use": "@vercel/static"
     }
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
+      "src": "^/api/(.*)$",
       "dest": "/api/wow.js"
     },
     { "handle": "filesystem" },
