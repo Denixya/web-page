@@ -14,8 +14,10 @@ export class WowGuildService {
     return this.http.get<WowCharacter[]>(`${this.apiUrl}?endpoint=guild`).pipe(
       map((chars) =>
         [...chars].sort((a, b) => {
-          if (a.name === 'Eliora') return -1;
-          if (b.name === 'Eliora') return 1;
+          if (a.name === 'Drakiria') return -1;
+          if (b.name === 'Drakiria') return 1;
+          if (a.name === 'Chumari') return -1;
+          if (b.name === 'Chumari') return 1;
           return b.mScore - a.mScore;
         }),
       ),

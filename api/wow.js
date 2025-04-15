@@ -113,7 +113,7 @@ async function getGuildData(rosterData) {
   const filteredMembers = await Promise.all(
     rosterData.members
       .filter(
-        (member) => member.rank === 0 || member.rank === 4 || member.rank === 6,
+        (member) => member.rank === 1 || member.rank === 4 || member.rank === 6,
       )
       .map(async (member) => {
         const extraInfo = await processAdditionalData(member);
