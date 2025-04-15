@@ -18,7 +18,7 @@
     { "handle": "filesystem" },
     {
       "src": "/(.*)",
-      "dest": "/dist/web-page/index.html"
+      "dest": "/dist/web-page/browser/index.html"
     }
   ]
 }
