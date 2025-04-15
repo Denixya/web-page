@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { WorkInProgressComponent } from '../../components/work-in-progress/work-in-progress.component';
+import { CardComponent } from '../../components/card/card.component';
 
 @Component({
   selector: 'app-project',
-  imports: [WorkInProgressComponent],
+  imports: [CardComponent],
   templateUrl: './project.component.html',
   styleUrl: './project.component.scss',
 })

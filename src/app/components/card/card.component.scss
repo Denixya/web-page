@@ -1,4 +1,4 @@
-@use '../../../styles/variables' as vars;
+@use "../../../styles/variables" as vars;
 
 .cardDiv {
   background-color: vars.$card-bg-color;
@@ -12,7 +12,6 @@
     margin: 1rem auto;
     max-width: 90%;
   }
-
 }
 
 img {
@@ -41,4 +40,14 @@ h2 {
 p {
   color: white;
   text-align: justify;
+}
+
+.custom-link {
+  text-decoration: none;
+  color: white;
+  transition: text-decoration 0.3s ease;
+}
+
+.custom-link:hover {
+  text-decoration: underline;
 }

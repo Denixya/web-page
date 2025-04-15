@@ -12,6 +12,11 @@
     <div class="col-12 col-md-8 textDiv text-center text-md-start">
       <h2 class="mb-4 text-center">{{ title() }}</h2>
       <p>{{ description() }}</p>
+      @if (link()) {
+        <div class="d-flex align-self-end mt-3">
+          <a [routerLink]="link()" class="custom-link">Ver más...</a>
+        </div>
+      }
     </div>
   </div>
 </div>
