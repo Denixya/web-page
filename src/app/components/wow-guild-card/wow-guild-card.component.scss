@@ -66,10 +66,10 @@ h2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; // centrado horizontal
+  align-items: center;
 
   @media (min-width: 768px) {
-    align-items: flex-start; // en tablets y más grandes, lo alineamos a la izquierda
+    align-items: flex-start;
   }
 }
 
@@ -81,13 +81,25 @@ h2 {
   align-items: center;
   text-align: center;
   padding-left: 0;
+  * {
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+  }
+  //Background style
+  background-image: none;
 
   @media (min-width: 768px) {
     align-items: flex-start;
     text-align: left;
     padding-left: 1rem;
-    max-width: calc(100% - 160px); // ajusta según el ancho de tu imagen
+    max-width: calc(100% - 160px);
     overflow-wrap: break-word;
+
+    //Background style
+    background-color: vars.$card-bg-color;
+    background-size: 480px auto;
+    background-position: clamp(50%, calc(65% + 8.2vw), 10%) 59%;
+    background-repeat: no-repeat;
+    background-blend-mode: soft-light;
   }
 }
 

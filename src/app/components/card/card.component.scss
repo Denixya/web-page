@@ -43,11 +43,23 @@ p {
 }
 
 .custom-link {
+  position: relative;
+  color: #c8e3ff;
   text-decoration: none;
-  color: white;
-  transition: text-decoration 0.3s ease;
-}
+  display: inline-block;
 
-.custom-link:hover {
-  text-decoration: underline;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 2px;
+    width: 0%;
+    background-color: currentColor;
+    transition: width 0.15s ease;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
 }
