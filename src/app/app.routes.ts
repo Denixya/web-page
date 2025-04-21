@@ -29,6 +29,13 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'projects/form',
+    loadComponent: () =>
+      import('./pages/form-page/form-page.component').then(
+        (c) => c.FormPageComponent,
+      ),
+  },
+  {
     path: '**',
     redirectTo: 'home',
   },

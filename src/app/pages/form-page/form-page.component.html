@@ -1,0 +1,183 @@
+<form [formGroup]="form()" (ngSubmit)="onSubmit()" class="container p-4">
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <label for="firstName" class="form-label">Nombre</label>
+      <input
+        id="firstName"
+        type="text"
+        class="form-control"
+        formControlName="firstName"
+        placeholder="Introduce tu nombre"
+      />
+      @if (getControl("firstName").touched && getControl("firstName").invalid) {
+        <div class="text-danger small mt-1">
+          Nombre requerido (mín. 2 letras)
+        </div>
+      }
+    </div>
+
+    <div class="col-md-6">
+      <label for="lastName" class="form-label">Apellido(s)</label>
+      <input
+        id="lastName"
+        type="text"
+        class="form-control"
+        formControlName="lastName"
+        placeholder="Introduce tu apellido"
+      />
+      @if (getControl("lastName").touched && getControl("lastName").invalid) {
+        <div class="text-danger small mt-1">
+          Apellido requerido (mín. 2 letras)
+        </div>
+      }
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="email" class="form-label">Correo electrónico</label>
+    <input
+      id="email"
+      type="email"
+      class="form-control"
+      formControlName="email"
+      placeholder="correo@ejemplo.com"
+    />
+    @if (getControl("email").touched && getControl("email").invalid) {
+      <div class="text-danger small mt-1">Introduce un correo válido</div>
+    }
+  </div>
+
+  <div class="mb-3">
+    <label for="birthDate" class="form-label">Fecha de nacimiento</label>
+    <input
+      id="birthDate"
+      type="date"
+      class="form-control"
+      formControlName="birthDate"
+    />
+    @if (
+      getControl("birthDate").touched &&
+      getControl("birthDate").errors?.["ageTooLow"]
+    ) {
+      <div class="text-danger small mt-1">Debes tener al menos 13 años</div>
+    }
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <label for="password" class="form-label">Contraseña</label>
+      <div class="input-group">
+        <input
+          id="password"
+          [type]="showPassword() ? 'text' : 'password'"
+          class="form-control"
+          formControlName="password"
+        />
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          (click)="showPassword.set(!showPassword())"
+        >
+          <i
+            class="bi"
+            [class.bi-eye]="!showPassword()"
+            [class.bi-eye-slash]="showPassword()"
+          ></i>
+        </button>
+      </div>
+      @if (getControl("password").touched && getControl("password").invalid) {
+        <div class="text-danger small mt-1">
+          Mín. 8 caracteres, con mayúscula, minúscula, número y símbolo
+        </div>
+      }
+    </div>
+
+    <div class="col-md-6">
+      <label for="confirmPassword" class="form-label"
+        >Confirmar contraseña</label
+      >
+      <input
+        id="confirmPassword"
+        [type]="showPassword() ? 'text' : 'password'"
+        class="form-control"
+        formControlName="confirmPassword"
+      />
+      @if (form().touched && form().errors?.["passwordsMismatch"]) {
+        <div class="text-danger small mt-1">Las contraseñas no coinciden</div>
+      }
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="phone" class="form-label">Teléfono</label>
+    <input
+      id="phone"
+      type="tel"
+      class="form-control"
+      formControlName="phone"
+      placeholder="Ej. 123456789"
+    />
+    @if (getControl("phone").touched && getControl("phone").invalid) {
+      <div class="text-danger small mt-1">Solo números permitidos</div>
+    }
+  </div>
+
+  <div class="mb-3">
+    <label for="url" class="form-label">URL (opcional)</label>
+    <input
+      id="url"
+      type="url"
+      class="form-control"
+      formControlName="url"
+      placeholder="https://tuweb.com"
+    />
+    @if (getControl("url").touched && getControl("url").invalid) {
+      <div class="text-danger small mt-1">URL no válida</div>
+    }
+  </div>
+  <div class="mb-3">
+    <label for="aboutYou" class="form-label">Sobre ti (opcional)</label>
+    <textarea
+      id="aboutYou"
+      class="form-control"
+      rows="4"
+      formControlName="aboutYou"
+      placeholder="Cuéntanos algo sobre ti..."
+    ></textarea>
+
+    @if (getControl("aboutYou").errors?.["maxWords"]) {
+      <div class="text-danger small mt-1">
+        Máximo 50 palabras permitido (actual: {{ getAboutYouWordCount() }})
+      </div>
+    } @else {
+      <div class="text-muted small mt-1">
+        Palabras: {{ getAboutYouWordCount() }}/50
+      </div>
+    }
+  </div>
+
+  <div class="mb-4">
+    <label class="form-label d-block">Tipo de almacenamiento</label>
+    <div class="form-check form-check-inline">
+      <input
+        id="session"
+        class="form-check-input"
+        type="radio"
+        formControlName="storage"
+        value="session"
+      />
+      <label for="session" class="form-check-label">Guardar en sesión</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        id="local"
+        class="form-check-input"
+        type="radio"
+        formControlName="storage"
+        value="local"
+      />
+      <label for="local" class="form-check-label">Guardar en local</label>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary w-100">Enviar</button>
+</form>

@@ -1,8 +1,8 @@
-@forward './styles/reset';
+@forward "./styles/reset";
 
-@use './styles/variables' as vars;
+@use "./styles/variables" as vars;
 
-
+@import "bootstrap-icons/font/bootstrap-icons.css";
 .layout {
   background-color: transparent;
   margin: 112px auto 56px;
@@ -13,7 +13,6 @@
 // General
 html body {
   background-color: vars.$body-background-color !important;
-
 }
 
 // Menus
@@ -35,7 +34,9 @@ html body {
 
 .dropdown-item.custom-dropdown-item:hover {
   background-color: rgb(103, 106, 124);
-  transition: background-color 0.5s ease, color 0.5s ease;
+  transition:
+    background-color 0.5s ease,
+    color 0.5s ease;
 }
 
 .navbar-toggler {

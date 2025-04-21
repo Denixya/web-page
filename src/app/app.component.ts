@@ -32,6 +32,10 @@ export class AppComponent {
           label: 'Proyecto WoW',
           link: '/projects/wow',
         },
+        {
+          label: 'Formulario',
+          link: '/projects/form',
+        },
       ],
     },
   ];

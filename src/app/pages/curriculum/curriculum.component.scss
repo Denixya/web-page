@@ -1,4 +1,4 @@
-@use '../../../styles/variables' as vars;
+@use "../../../styles/variables" as vars;
 
 .timeline {
   border-left: 2px solid vars.$cv-color-light;
@@ -26,7 +26,7 @@
 }
 
 .timeline-card:before {
-  content: '';
+  content: "";
   display: inline-block;
   position: absolute;
   background-color: vars.$cv-color-light;
@@ -40,7 +40,7 @@
 }
 
 .timeline-card:after {
-  content: '';
+  content: "";
   display: inline-block;
   position: absolute;
   background-color: currentColor;
@@ -76,15 +76,15 @@
 }
 
 .timeline-card-info {
-  border-left-color: pink;
+  border-left-color: rgb(255, 47, 81);
 }
 
 .timeline-card-info:before {
-  border-color: pink;
+  border-color: rgb(255, 47, 81);
 }
 
 .timeline-card-info:after {
-  background-color: pink;
+  background-color: rgb(255, 47, 81);
 }
 
 html {
@@ -112,7 +112,7 @@ html {
   color: vars.$cv-color-dark;
 }
 
-.nav-item+.nav-item {
+.nav-item + .nav-item {
   margin-left: 1rem;
 }
 
@@ -148,7 +148,6 @@ footer a:not(.nav-link) {
 }
 
 @media (min-width: 48em) {
-
   // ?
   .site-title {
     float: left;
@@ -165,9 +164,7 @@ footer a:not(.nav-link) {
   }
 }
 
-
 @media print {
-
   // ?
   body {
     background-color: vars.$cv-color-light;
@@ -240,7 +237,7 @@ html {
 }
 
 // ?
-.nav-item+.nav-item {
+.nav-item + .nav-item {
   margin-left: 1rem;
 }
 
@@ -276,7 +273,6 @@ footer a:not(.nav-link) {
 }
 
 @media (min-width: 48em) {
-
   // ?
   .site-title {
     float: left;

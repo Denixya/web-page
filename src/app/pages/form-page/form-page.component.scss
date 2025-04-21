@@ -1,0 +1,28 @@
+.container {
+  background-color: #434343;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  color: #fff;
+
+  input,
+  textarea,
+  select {
+    color: #000;
+    background-color: #fff;
+  }
+
+  .btn {
+    color: #fff;
+  }
+  input[type="radio"],
+  input[type="checkbox"] {
+    // accent-color: #0d6efd;
+    appearance: auto;
+  }
+
+  .text-muted {
+    color: rgba(255, 255, 255, 0.6) !important;
+  }
+}
