@@ -51,40 +51,52 @@
   z-index: 1;
 }
 
-.timeline-card-primary {
-  border-left-color: vars.$cv-color-primary;
-}
-
-.timeline-card-primary:before {
-  border-color: vars.$cv-color-primary;
-}
-
-.timeline-card-primary:after {
-  background-color: vars.$cv-color-primary;
-}
-
-.timeline-card-success {
-  border-left-color: vars.$cv-color-secondary;
-}
-
-.timeline-card-success:before {
-  border-color: vars.$cv-color-secondary;
-}
-
-.timeline-card-success:after {
-  background-color: vars.$cv-color-secondary;
-}
-
 .timeline-card-info {
-  border-left-color: rgb(255, 47, 81);
+  border-left-color: vars.$cv-color-one;
 }
 
 .timeline-card-info:before {
-  border-color: rgb(255, 47, 81);
+  border-color: vars.$cv-color-one;
 }
 
 .timeline-card-info:after {
-  background-color: rgb(255, 47, 81);
+  background-color: vars.$cv-color-one;
+}
+
+.timeline-card-success {
+  border-left-color: vars.$cv-color-two;
+}
+
+.timeline-card-success:before {
+  border-color: vars.$cv-color-two;
+}
+
+.timeline-card-success:after {
+  background-color: vars.$cv-color-two;
+}
+
+.timeline-card-primary {
+  border-left-color: vars.$cv-color-three;
+}
+
+.timeline-card-primary:before {
+  border-color: vars.$cv-color-three;
+}
+
+.timeline-card-primary:after {
+  background-color: vars.$cv-color-three;
+}
+
+.timeline-card-last {
+  border-left-color: vars.$cv-color-four;
+}
+
+.timeline-card-last:before {
+  border-color: vars.$cv-color-four;
+}
+
+.timeline-card-last:after {
+  background-color: vars.$cv-color-four;
 }
 
 html {
@@ -288,3 +300,35 @@ footer a:not(.nav-link) {
     margin-left: 0;
   }
 }
+
+// Desplegable
+// .card {
+//   border: 1px solid #ddd;
+//   border-radius: 8px;
+//   background-color: #fff;
+//   color: #333;
+
+//   .toggle-header {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     cursor: pointer;
+//     font-weight: bold;
+//     padding: 1rem;
+//     background-color: #f1f1f1;
+//     transition: background-color 0.3s;
+
+//     &:hover {
+//       background-color: #e0e0e0;
+//     }
+
+//     .icon {
+//       font-size: 1.2rem;
+//     }
+//   }
+
+//   .card-body {
+//     padding: 1rem 1.5rem;
+//     border-top: 1px solid #ccc;
+//   }
+// }
