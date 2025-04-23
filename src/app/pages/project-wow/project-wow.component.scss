@@ -1,16 +1,17 @@
 @use "../../../styles/variables" as vars;
 
 .wow-container {
-  background-color: vars.$nav-background-color;
+  background-color: vars.$card-bg-color-dark;
   margin: 1.5rem auto;
   padding: 1rem;
   max-width: 90%;
   border-radius: 10px;
 }
 
-h1 {
+h2 {
   color: vars.$cv-color-light;
   margin-top: 1rem;
+  margin-bottom: 1rem;
   text-align: center;
 }
 

@@ -1,12 +1,12 @@
 <div>
-  <h1>Work in Progress ({{ elementName() }})</h1>
+  <h1>Work in Progress {{ elementName() }}</h1>
   <div class="wip-image-container">
-    <img src="wip.png" alt="Work in Progress" class="wip-image" />
+    <img
+      src="wip.png"
+      [style.max-width.px]="elementSize()"
+      alt="Work in Progress"
+      class="wip-image"
+    />
   </div>
-  <p>
-    <!-- This page is currently under construction. Please check back later for
-    updates. -->
-    ( Esta página está en construcción. Por favor, vuelve más tarde para ver las
-    actualizaciones. )
-  </p>
+  <p>( {{ elementDescription() }} )</p>
 </div>

@@ -80,8 +80,8 @@
         >
           <i
             class="bi"
-            [class.bi-eye]="!showPassword()"
-            [class.bi-eye-slash]="showPassword()"
+            [class.bi-eye]="showPassword()"
+            [class.bi-eye-slash]="!showPassword()"
           ></i>
         </button>
       </div>
@@ -179,5 +179,12 @@
       <label for="local" class="form-check-label">Guardar en local</label>
     </div>
   </div>
+  <app-work-in-progress
+    [elementName]="'( Formulario )'"
+    [elementSize]="250"
+    [elementDescription]="
+      'El formulario actualmente realiza las validaciones de los campos pero no hace nada con los valores.'
+    "
+  ></app-work-in-progress>
   <button type="submit" class="btn btn-primary w-100">Enviar</button>
 </form>

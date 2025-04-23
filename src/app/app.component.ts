@@ -36,6 +36,10 @@ export class AppComponent {
           label: 'Formulario',
           link: '/projects/form',
         },
+        {
+          label: 'Galería',
+          link: '/projects/anim',
+        },
       ],
     },
   ];

@@ -1,0 +1,22 @@
+@use "../../../styles/variables" as vars;
+
+.container {
+  background-color: vars.$card-bg-color-dark;
+  margin: 0.25rem auto;
+  padding: 1rem;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+  @media (min-width: 768px) {
+    margin: 1rem auto;
+    max-width: 90%;
+  }
+}
+
+h2 {
+  color: vars.$cv-color-light;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}

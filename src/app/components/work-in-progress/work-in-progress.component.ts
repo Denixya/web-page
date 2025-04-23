@@ -8,4 +8,6 @@ import { Component, input } from '@angular/core';
 })
 export class WorkInProgressComponent {
   elementName = input<string>();
+  elementSize = input<number>();
+  elementDescription = input<string>();
 }

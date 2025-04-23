@@ -7,13 +7,14 @@ import {
   FormGroup,
   ReactiveFormsModule,
 } from '@angular/forms';
+import { WorkInProgressComponent } from '../../components/work-in-progress/work-in-progress.component';
 
 @Component({
   selector: 'app-form-page',
   standalone: true,
   templateUrl: './form-page.component.html',
   styleUrl: './form-page.component.scss',
-  imports: [ReactiveFormsModule], // 👈 AÑADE ESTO
+  imports: [ReactiveFormsModule, WorkInProgressComponent], // 👈 AÑADE ESTO
 })
 export class FormPageComponent {
   showPassword = signal(false);

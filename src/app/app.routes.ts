@@ -36,6 +36,13 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'projects/anim',
+    loadComponent: () =>
+      import('./pages/project-anim/project-anim.component').then(
+        (c) => c.ProjectAnimComponent,
+      ),
+  },
+  {
     path: '**',
     redirectTo: 'home',
   },
