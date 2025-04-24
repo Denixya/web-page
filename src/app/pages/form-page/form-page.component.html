@@ -188,3 +188,7 @@
   ></app-work-in-progress>
   <button type="submit" class="btn btn-primary w-100">Enviar</button>
 </form>
+
+@if (formData()) {
+  <app-form-card [data]="formData()" />
+}

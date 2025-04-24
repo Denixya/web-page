@@ -1,4 +1,4 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import {
   FormBuilder,
   Validators,
@@ -8,20 +8,24 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { WorkInProgressComponent } from '../../components/work-in-progress/work-in-progress.component';
+import { FormCardComponent } from '../../components/form-card/form-card.component';
+import { FormItem } from './models/form-page.model';
 
 @Component({
   selector: 'app-form-page',
   standalone: true,
   templateUrl: './form-page.component.html',
   styleUrl: './form-page.component.scss',
-  imports: [ReactiveFormsModule, WorkInProgressComponent], // 👈 AÑADE ESTO
+  imports: [ReactiveFormsModule, WorkInProgressComponent, FormCardComponent], // 👈 AÑADE ESTO
 })
 export class FormPageComponent {
   showPassword = signal(false);
   form = signal<FormGroup>(new FormGroup({})); // Inicializa con un formulario vacío
+  formData = signal<FormItem | null>(null);
 
   constructor(private fb: FormBuilder) {
     this.form.set(this.createForm());
+    this.loadFormData();
   }
 
   private createForm(): FormGroup {
@@ -65,6 +69,13 @@ export class FormPageComponent {
     );
   }
 
+  loadFormData(): void {
+    const data = sessionStorage.getItem('formData');
+    if (data) {
+      this.formData.set(JSON.parse(data));
+    }
+  }
+
   private ageValidator(minAge: number) {
     return (control: AbstractControl): ValidationErrors | null => {
       const birthDate = new Date(control.value);
@@ -99,11 +110,18 @@ export class FormPageComponent {
   onSubmit(): void {
     const formGroup = this.form();
     if (formGroup.valid) {
+      const formValue = formGroup.value as FormItem;
+
+      // Guardar en sessionStorage
+      sessionStorage.setItem('formData', JSON.stringify(formValue));
+      this.formData.set(formValue);
+
       console.log('Formulario enviado:', formGroup.value);
     } else {
       formGroup.markAllAsTouched();
     }
   }
+
   getAboutYouWordCount(): number {
     const value = this.getControl('aboutYou').value as string;
     if (!value) return 0;
@@ -112,6 +130,7 @@ export class FormPageComponent {
       .split(/\s+/)
       .filter((word) => word).length;
   }
+
   maxWordsValidator(maxWords: number) {
     return (control: AbstractControl): ValidationErrors | null => {
       const value: string = control.value;
