@@ -43,7 +43,15 @@
       placeholder="correo@ejemplo.com"
     />
     @if (getControl("email").touched && getControl("email").invalid) {
-      <div class="text-danger small mt-1">Introduce un correo válido</div>
+      <div class="text-danger small mt-1">
+        @if (getControl("email").errors?.["email"]) {
+          Introduce un correo válido
+        } @else if (getControl("email").errors?.["duplicateEmail"]) {
+          Este correo ya está registrado
+        } @else {
+          Correo requerido
+        }
+      </div>
     }
   </div>
 
@@ -184,6 +192,6 @@
 
 <div class="card-container">
   @for (item of formData(); track item.email) {
-    <app-form-card [data]="item" />
+    <app-form-card [data]="item" (delete)="onDeleteFormItem($event)" />
   }
 </div>

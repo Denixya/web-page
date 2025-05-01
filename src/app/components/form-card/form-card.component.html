@@ -1,23 +1,33 @@
-<div class="form-card">
-  <div class="card-content">
-    <p>
-      <strong>Nombre:</strong> {{ data()?.firstName }} {{ data()?.lastName }}
-    </p>
-    <p><strong>Email:</strong> {{ data()?.email }}</p>
-    <p><strong>Fecha de nacimiento:</strong> {{ data()?.birthDate }}</p>
-    <p><strong>Teléfono:</strong> {{ data()?.phone }}</p>
-    @if (data()?.url) {
+<div class="card position-relative">
+  <button
+    class="btn btn-danger btn-sm position-absolute top-0 end-0 m-2"
+    (click)="onDelete()"
+    aria-label="Eliminar"
+  >
+    <i class="bi bi-trash"></i>
+  </button>
+
+  <div class="form-card">
+    <div class="card-content">
       <p>
-        <strong>URL:</strong>
-        <a [href]="data()?.url" target="_blank">{{ data()?.url }}</a>
+        <strong>Nombre:</strong> {{ data()?.firstName }} {{ data()?.lastName }}
       </p>
-    }
-    @if (data()?.aboutYou) {
-      <p><strong>Sobre ti:</strong> {{ data()?.aboutYou }}</p>
-    }
-    <p>
-      <strong>Almacenamiento:</strong>
-      {{ data()?.storage === "local" ? "LocalStorage" : "SessionStorage" }}
-    </p>
+      <p><strong>Email:</strong> {{ data()?.email }}</p>
+      <p><strong>Fecha de nacimiento:</strong> {{ data()?.birthDate }}</p>
+      <p><strong>Teléfono:</strong> {{ data()?.phone }}</p>
+      @if (data()?.url) {
+        <p>
+          <strong>URL:</strong>
+          <a [href]="data()?.url" target="_blank">{{ data()?.url }}</a>
+        </p>
+      }
+      @if (data()?.aboutYou) {
+        <p><strong>Sobre ti:</strong> {{ data()?.aboutYou }}</p>
+      }
+      <p>
+        <strong>Almacenamiento:</strong>
+        {{ data()?.storage === "local" ? "LocalStorage" : "SessionStorage" }}
+      </p>
+    </div>
   </div>
 </div>

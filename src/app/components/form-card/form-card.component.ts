@@ -1,11 +1,17 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { FormItem } from '../../pages/form-page/models/form-page.model';
 
 @Component({
   selector: 'app-form-card',
+  standalone: true,
   templateUrl: './form-card.component.html',
-  styleUrls: ['./form-card.component.scss'],
+  styleUrl: './form-card.component.scss',
 })
 export class FormCardComponent {
-  data = input<FormItem | null>();
+  readonly data = input<FormItem>();
+  readonly delete = output<string>();
+
+  onDelete(): void {
+    this.delete.emit(this.data()!.email);
+  }
 }

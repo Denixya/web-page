@@ -69,13 +69,6 @@ export class FormPageComponent {
     );
   }
 
-  loadFormData(): void {
-    const data = sessionStorage.getItem('formData');
-    if (data) {
-      this.formData.set(JSON.parse(data) as FormItem[]);
-    }
-  }
-
   private ageValidator(minAge: number) {
     return (control: AbstractControl): ValidationErrors | null => {
       const birthDate = new Date(control.value);
@@ -109,20 +102,46 @@ export class FormPageComponent {
 
   onSubmit(): void {
     const formGroup = this.form();
-    if (formGroup.valid) {
-      const formValue = formGroup.value as FormItem;
-
-      // Añadir nuevo valor al array
-      const updatedData = [...this.formData(), formValue];
-      this.formData.set(updatedData);
-
-      // Guardar en sessionStorage como array
-      sessionStorage.setItem('formData', JSON.stringify(updatedData));
-
-      console.log('Formulario enviado:', formGroup.value);
-    } else {
+    if (!formGroup.valid) {
       formGroup.markAllAsTouched();
+      return;
     }
+
+    const formValue = formGroup.value as FormItem;
+    const allData = this.formData();
+
+    if (allData.some((item) => item.email === formValue.email)) {
+      this.getControl('email').setErrors({ duplicateEmail: true });
+      return;
+    }
+
+    if (formValue.storage === 'local') {
+      this.updateLocal(formValue);
+    } else {
+      this.updateSession(formValue);
+    }
+
+    this.loadFormData();
+
+    formGroup.reset({ storage: 'session' });
+  }
+
+  private updateSession(newItem: FormItem): void {
+    const existing = JSON.parse(sessionStorage.getItem('formData') || '[]');
+    const updated = [...existing, newItem];
+    sessionStorage.setItem('formData', JSON.stringify(updated));
+  }
+
+  private updateLocal(newItem: FormItem): void {
+    const existing = JSON.parse(localStorage.getItem('formData') || '[]');
+    const updated = [...existing, newItem];
+    localStorage.setItem('formData', JSON.stringify(updated));
+  }
+
+  loadFormData(): void {
+    const session = JSON.parse(sessionStorage.getItem('formData') || '[]');
+    const local = JSON.parse(localStorage.getItem('formData') || '[]');
+    this.formData.set([...session, ...local]);
   }
 
   getAboutYouWordCount(): number {
@@ -148,5 +167,20 @@ export class FormPageComponent {
         ? { maxWords: { required: maxWords, actual: wordCount } }
         : null;
     };
+  }
+
+  onDeleteFormItem(email: string): void {
+    const updatedFormData = this.formData().filter(
+      (item) => item.email !== email,
+    );
+    this.formData.set(updatedFormData);
+
+    const session = updatedFormData.filter(
+      (item) => item.storage === 'session',
+    );
+    const local = updatedFormData.filter((item) => item.storage === 'local');
+
+    sessionStorage.setItem('formData', JSON.stringify(session));
+    localStorage.setItem('formData', JSON.stringify(local));
   }
 }

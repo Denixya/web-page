@@ -34,3 +34,10 @@
     flex: 1 1 calc(50% - 1rem);
   }
 }
+.card {
+  position: relative;
+
+  .btn-danger {
+    z-index: 10;
+  }
+}
