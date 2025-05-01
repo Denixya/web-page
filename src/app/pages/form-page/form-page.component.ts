@@ -20,8 +20,8 @@ import { FormItem } from './models/form-page.model';
 })
 export class FormPageComponent {
   showPassword = signal(false);
-  form = signal<FormGroup>(new FormGroup({})); // Inicializa con un formulario vacío
-  formData = signal<FormItem | null>(null);
+  form = signal<FormGroup>(new FormGroup({}));
+  formData = signal<FormItem[]>([]);
 
   constructor(private fb: FormBuilder) {
     this.form.set(this.createForm());
@@ -72,7 +72,7 @@ export class FormPageComponent {
   loadFormData(): void {
     const data = sessionStorage.getItem('formData');
     if (data) {
-      this.formData.set(JSON.parse(data));
+      this.formData.set(JSON.parse(data) as FormItem[]);
     }
   }
 
@@ -112,9 +112,12 @@ export class FormPageComponent {
     if (formGroup.valid) {
       const formValue = formGroup.value as FormItem;
 
-      // Guardar en sessionStorage
-      sessionStorage.setItem('formData', JSON.stringify(formValue));
-      this.formData.set(formValue);
+      // Añadir nuevo valor al array
+      const updatedData = [...this.formData(), formValue];
+      this.formData.set(updatedData);
+
+      // Guardar en sessionStorage como array
+      sessionStorage.setItem('formData', JSON.stringify(updatedData));
 
       console.log('Formulario enviado:', formGroup.value);
     } else {

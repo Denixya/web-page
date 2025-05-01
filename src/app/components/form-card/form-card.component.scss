@@ -1,10 +1,14 @@
 .form-card {
   background: #fff;
   border-radius: 1rem;
-  padding: 2rem;
+  padding: 1rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  max-width: 500px;
-  margin: 2rem auto;
+
+  width: 100%;
+  max-width: 500px; // Asegura que las tarjetas no se estiren más allá de este tamaño
+  margin: 1rem 0; // Ajuste para un margen superior e inferior, puedes personalizarlo
+  display: flex;
+  flex-direction: column;
 
   h2 {
     margin-bottom: 1.5rem;
@@ -13,8 +17,8 @@
   }
 
   .card-content p {
-    margin: 0.5rem 0;
-    line-height: 1.5;
+    margin: 0.25rem 0;
+    line-height: 1.4;
   }
 
   a {
@@ -24,5 +28,9 @@
     &:hover {
       text-decoration: none;
     }
+  }
+
+  @media (min-width: 768px) {
+    flex: 1 1 calc(50% - 1rem);
   }
 }
