@@ -4,6 +4,7 @@ export interface FormItem {
   email: string;
   birthDate: string;
   password: string;
+  confirmPassword?: string;
   phone: string;
   url?: string;
   aboutYou?: string;
