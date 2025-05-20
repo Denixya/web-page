@@ -9,14 +9,15 @@ import {
 import { FormCardComponent } from '../../components/form-card/form-card.component';
 import { FormItem } from './models/form-page.model';
 import { FormValidatorsService } from './services/form-validators.service';
-import { FormStorageService } from './services/form-storage.service'; // nuevo servicio
+import { FormStorageService } from './services/form-storage.service';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-form-page',
   standalone: true,
   templateUrl: './form-page.component.html',
   styleUrl: './form-page.component.scss',
-  imports: [ReactiveFormsModule, FormCardComponent],
+  imports: [ReactiveFormsModule, FormCardComponent, TranslatePipe],
 })
 export class FormPageComponent {
   showPassword = signal(false);

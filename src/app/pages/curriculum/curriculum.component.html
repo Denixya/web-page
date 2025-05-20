@@ -20,7 +20,7 @@
             Rosa Ana Giménez Salinas
           </h2>
           <p data-aos="fade-left" data-aos-delay="100">
-            Desarrolladora Frontend
+            {{ "cv.aboutme.work" | translate }}
           </p>
           <div class="d-print-none" data-aos="fade-left" data-aos-delay="200">
             <a
@@ -36,22 +36,11 @@
     <div class="about-section pt-4 px-3 px-lg-4 mt-5">
       <div class="row">
         <div class="col-md-6">
-          <h2 class="h3 mb-3">Sobre mí</h2>
-          <p class="about-description">
-            Apasionada por la tecnología desde temprana edad, me formé en el
-            Grado Medio de Sistemas Microinformáticos y Redes, y en el Grado
-            Superior de Desarrollo de Aplicaciones Multiplataforma, donde
-            aprendí a programar en Java, SQL, HTML, CSS y JavaScript. Más
-            adelante, amplié mi perfil como artista y animadora 3D, compaginando
-            esta etapa con trabajo freelance en desarrollo de aplicaciones en
-            Angular para una empresa extranjera.
-            <br /><br />
-            Actualmente, estoy especializada en desarrollo Frontend con HTML,
-            CSS, TypeScript y Angular, aprovechando herramientas como GitHub
-            Copilot para optimizar la productividad. Me destaco por mi capacidad
-            de adaptación, el trabajo en equipo y la iniciativa constante para
-            seguir aprendiendo y afrontar nuevos desafíos.
-          </p>
+          <h2 class="h3 mb-3">{{ "cv.aboutme" | translate }}</h2>
+          <p
+            class="about-description"
+            [innerHTML]="'cv.aboutme.description' | translate"
+          ></p>
         </div>
         <div class="col-md-5 offset-md-1">
           <div class="row mt-2">
@@ -64,10 +53,12 @@
               </div>
             </div>
             <div class="col-sm-4">
-              <div class="pb-1">Dirección</div>
+              <div class="pb-1">{{ "cv.aboutme.ubication" | translate }}</div>
             </div>
             <div class="col-sm-8">
-              <div class="pb-1 text-secondary">Asturias, España</div>
+              <div class="pb-1 text-secondary">
+                Asturias, {{ "cv.aboutme.country" | translate }}
+              </div>
             </div>
             <div class="col-sm-4">
               <div class="pb-1">Website</div>
@@ -85,7 +76,7 @@
     </div>
     <hr class="d-print-none" />
     <div class="skills-section px-3 px-lg-4">
-      <h2 class="h3 mb-3">Habilidades Profesionales</h2>
+      <h2 class="h3 mb-3">{{ "cv.skills" | translate }}</h2>
       <div class="row">
         <!-- Habilidades Frontend -->
         <div class="col-md-6">
@@ -201,28 +192,38 @@
     </div>
     <hr class="d-print-none" />
     <div class="projects-section px-3 px-lg-4 pb-4">
-      <h2 class="h3 mb-4">Proyectos Personales</h2>
+      <h2 class="h3 mb-4">{{ "cv.personalprojects.name" | translate }}</h2>
       <div class="timeline">
         <div class="timeline-card timeline-card-info card shadow-sm">
           <div class="card-body">
             <div class="h5 mb-1">
-              Desarrollo de Aplicaciones Web con Angular
-              <span class="text-muted h6">2024 - Presente</span>
+              {{ "cv.personalprojects.angularweb.name" | translate }}
+              <span class="text-muted h6"></span>
+            </div>
+            <div class="text-muted text-small mb-2">
+              {{ "cv.personalprojects.angularweb.date" | translate }}
             </div>
             <div>
               <ul>
                 <li>
-                  Desarrollo de una página web Portfolio con Angular 19, SCSS,
-                  Signal y RxJS
-                </li>
-                <li>Uso de Boostrap para el Layout de la Web</li>
-                <li>
-                  Creación de una página de inicio y CV responsive empleando la
-                  metodología Mobile first
+                  {{
+                    "cv.personalprojects.angularweb.description1" | translate
+                  }}
                 </li>
                 <li>
-                  Uso de la API de World of Warcraft para la creación de un
-                  Dashboard con información personalizada
+                  {{
+                    "cv.personalprojects.angularweb.description2" | translate
+                  }}
+                </li>
+                <li>
+                  {{
+                    "cv.personalprojects.angularweb.description3" | translate
+                  }}
+                </li>
+                <li>
+                  {{
+                    "cv.personalprojects.angularweb.description4" | translate
+                  }}
                 </li>
               </ul>
             </div>
@@ -232,26 +233,29 @@
     </div>
     <hr class="d-print-none" />
     <div class="work-experience-section px-3 px-lg-4">
-      <h2 class="h3 mb-4">Experiencia Profesional</h2>
+      <h2 class="h3 mb-4">{{ "cv.workexperience.name" | translate }}</h2>
       <div class="timeline">
         <div class="timeline-card timeline-card-primary card shadow-sm">
           <div class="card-body">
             <div class="h5 mb-1">
-              Desarrollo de Aplicaciones Web con Angular
-              <span class="text-muted h6">en Navit Cloud</span>
+              {{ "cv.workexperience.navit.name" | translate }}
+              <span class="text-muted h6">{{
+                "cv.workexperience.navit.place" | translate
+              }}</span>
             </div>
             <div class="text-muted text-small mb-2">
-              Febrero 2022 - Junio 2024
+              {{ "cv.workexperience.navit.date" | translate }}
             </div>
             <div>
               <ul>
-                <li>Proyecto en Angular utilizando Figma para maquetación</li>
                 <li>
-                  Soporte a backend en Java/Springboot para un proyecto
-                  independiente
+                  {{ "cv.workexperience.navit.description1" | translate }}
                 </li>
                 <li>
-                  Desarrollo y documentación para proyecto Angular con AsciiDoc
+                  {{ "cv.workexperience.navit.description2" | translate }}
+                </li>
+                <li>
+                  {{ "cv.workexperience.navit.description3" | translate }}
                 </li>
               </ul>
             </div>
@@ -260,17 +264,19 @@
         <div class="timeline-card timeline-card-primary card shadow-sm">
           <div class="card-body">
             <div class="h5 mb-1">
-              Prácticas en Backend
-              <span class="text-muted h6">en MrJeff</span>
+              {{ "cv.workexperience.jeff.name" | translate }}
+              <span class="text-muted h6">
+                {{ "cv.workexperience.jeff.place" | translate }}
+              </span>
             </div>
             <div class="text-muted text-small mb-2">
-              Marzo 2016 - Junio 2016
+              {{ "cv.workexperience.jeff.date" | translate }}
             </div>
             <div>
               <ul>
-                <li>Aceso a base de datos desde aplicaciones Java</li>
-                <li>Control de errores mediante tests unitarios</li>
-                <li>Uso de GIT y GitFlow para control de versiones</li>
+                <li>{{ "cv.workexperience.jeff.description1" | translate }}</li>
+                <li>{{ "cv.workexperience.jeff.description2" | translate }}</li>
+                <li>{{ "cv.workexperience.jeff.description3" | translate }}</li>
               </ul>
             </div>
           </div>
@@ -278,19 +284,19 @@
         <div class="timeline-card timeline-card-primary card shadow-sm">
           <div class="card-body">
             <div class="h5 mb-1">
-              Prácticas desarrollando bases de datos
-              <span class="text-muted h6"
-                >en la Universidad Politécnica de Valencia</span
-              >
+              {{ "cv.workexperience.upv.name" | translate }}
+              <span class="text-muted h6">
+                {{ "cv.workexperience.upv.place" | translate }}
+              </span>
             </div>
             <div class="text-muted text-small mb-2">
-              Marzo 2014 - Junio 2014
+              {{ "cv.workexperience.upv.date" | translate }}
             </div>
             <div>
               <ul>
-                <li>Uso de SQL para realizar consultas sobre bases de datos</li>
-                <li>Desarrollo de bases de datos en Microsoft Access</li>
-                <li>Optimización de bases de datos</li>
+                <li>{{ "cv.workexperience.upv.description1" | translate }}</li>
+                <li>{{ "cv.workexperience.upv.description2" | translate }}</li>
+                <li>{{ "cv.workexperience.upv.description3" | translate }}</li>
               </ul>
             </div>
           </div>
@@ -300,20 +306,24 @@
     <br />
     <hr class="d-print-none" />
     <div class="education-section px-3 px-lg-4 pb-4">
-      <h2 class="h3 mb-4">Estudios</h2>
+      <h2 class="h3 mb-4">{{ "cv.estudies.name" | translate }}</h2>
       <div class="timeline">
         <div class="timeline-card timeline-card-success card shadow-sm">
           <div class="card-body">
             <div class="h5 mb-1">
-              FP de Grado Superior en Programación Multiplataforma
-              <span class="text-muted h6">en Ases Valencia</span>
+              {{ "cv.estudies.fps.name" | translate }}
+              <span class="text-muted h6">{{
+                "cv.estudies.fps.place" | translate
+              }}</span>
             </div>
-            <div class="text-muted text-small mb-2">2014 - 2016</div>
+            <div class="text-muted text-small mb-2">
+              {{ "cv.estudies.fps.date" | translate }}
+            </div>
             <div>
               <ul>
-                <li>Desarrollo de aplicaciones Java</li>
-                <li>Desarrollo de aplicaciones Android</li>
-                <li>Gestión de bases de datos (SQL y SQLite)</li>
+                <li>{{ "cv.estudies.fps.description1" | translate }}</li>
+                <li>{{ "cv.estudies.fps.description2" | translate }}</li>
+                <li>{{ "cv.estudies.fps.description3" | translate }}</li>
               </ul>
             </div>
           </div>
@@ -321,16 +331,18 @@
         <div class="timeline-card timeline-card-success card shadow-sm">
           <div class="card-body">
             <div class="h5 mb-1">
-              FP de Grado Medio en Sistemas Microinformáticos y Redes
-              <span class="text-muted h6">en IES Grao</span>
+              {{ "cv.estudies.fps.name" | translate }}
+              <span class="text-muted h6">{{
+                "cv.estudies.fps.place" | translate
+              }}</span>
             </div>
-            <div class="text-muted text-small mb-2">2012 - 2014</div>
+            <div class="text-muted text-small mb-2">
+              {{ "cv.estudies.fps.date" | translate }}
+            </div>
             <div>
               <ul>
-                <li>Gestión de Redes locales</li>
-                <li>
-                  Desarrollo de aplicaciones Web con HTML, CSS y JavaScript
-                </li>
+                <li>{{ "cv.estudies.fps.description1" | translate }}</li>
+                <li>{{ "cv.estudies.fps.description2" | translate }}</li>
               </ul>
             </div>
           </div>
@@ -340,38 +352,44 @@
     <div class="page-break"></div>
     <hr class="d-print-none" />
     <div class="more-education-section px-3 px-lg-4">
-      <h2 class="h3 mb-4">Estudios complementarios</h2>
+      <h2 class="h3 mb-4">{{ "cv.complementary.name" | translate }}</h2>
       <div class="timeline">
         <div class="timeline-card timeline-card-last card shadow-sm">
           <div class="card-body">
             <div class="h5 mb-1">
-              HND en Arte para Videojuegos
-              <span class="text-muted h6">en ESAT</span>
+              {{ "cv.complementary.workshop.name" | translate }}
+              <span class="text-muted h6">{{
+                "cv.complementary.workshop.place" | translate
+              }}</span>
             </div>
             <div class="text-muted text-small mb-2">
-              Septiembre 2017 - Junio 2020
+              {{ "cv.complementary.workshop.date" | translate }}
             </div>
           </div>
         </div>
-        <div class="timeline-card timeline-card-last card shadow-sm mt-3">
+        <div class="timeline-card timeline-card-last card shadow-sm">
           <div class="card-body">
             <div class="h5 mb-1">
-              Master en Animación de Personajes 3D
-              <span class="text-muted h6">en Animum</span>
+              {{ "cv.complementary.master.name" | translate }}
+              <span class="text-muted h6">{{
+                "cv.complementary.master.place" | translate
+              }}</span>
             </div>
             <div class="text-muted text-small mb-2">
-              Octubre 2021 - Diciembre 2023
+              {{ "cv.complementary.master.date" | translate }}
             </div>
           </div>
         </div>
-        <div class="timeline-card timeline-card-last card shadow-sm mt-3">
+        <div class="timeline-card timeline-card-last card shadow-sm">
           <div class="card-body">
             <div class="h5 mb-1">
-              Workshop Avanzado "Explode your reel"
-              <span class="text-muted h6">en Animum</span>
+              {{ "cv.complementary.esat.name" | translate }}
+              <span class="text-muted h6">{{
+                "cv.complementary.esat.place" | translate
+              }}</span>
             </div>
             <div class="text-muted text-small mb-2">
-              Abril 2024 - Julio 2024
+              {{ "cv.complementary.esat.date" | translate }}
             </div>
           </div>
         </div>

@@ -1,0 +1,19 @@
+<div class="d-flex">
+  <div class="btn-group">
+    <button
+      (click)="useLanguage('en')"
+      [class]="'btn btn-outline-light'"
+      [class.active]="currentLanguage == 'en'"
+      aria-current="page"
+    >
+      en
+    </button>
+    <button
+      (click)="useLanguage('es')"
+      [class]="'btn btn-outline-light'"
+      [class.active]="currentLanguage == 'es'"
+    >
+      es
+    </button>
+  </div>
+</div>

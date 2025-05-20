@@ -1,0 +1,182 @@
+{
+  "navbar": {
+    "home": "Home",
+    "cv": "Resume",
+    "projects": "Projects",
+    "projectshome": "Projects Home",
+    "wow": "WoW Project",
+    "form": "Form",
+    "gallery": "Gallery"
+  },
+  "footer": {
+    "legal": "All rights reserved"
+  },
+  "card": {
+    "seemore": "See more..."
+  },
+
+  "home": {
+    "aboutme": "About Me",
+    "description": "Junior web developer passionate about technology and digital experiences. I quickly adapt to new environments and enjoy working in teams. I'm driven by turning ideas into attractive web solutions, always with enthusiasm and dedication."
+  },
+
+  "cv": {
+    "aboutme": "About Me",
+    "aboutme.description": "Passionate about technology from an early age, I studied a Vocational Training in Microcomputer Systems and Networks, and later a Higher Degree in Multiplatform Application Development, where I learned Java, SQL, HTML, CSS, and JavaScript. I later expanded my profile as a 3D artist and animator, combining this with freelance work in Angular application development for a foreign company. <br /><br /> Currently, I specialize in Frontend development with HTML, CSS, TypeScript, and Angular, leveraging tools like GitHub Copilot to boost productivity. I'm known for adaptability, teamwork, and a constant initiative to keep learning and face new challenges.",
+    "aboutme.work": "Frontend Developer",
+    "aboutme.ubication": "Location",
+    "aboutme.country": "Spain",
+    "skills": "Professional Skills",
+
+    "personalprojects": {
+      "name": "Personal Projects",
+      "angularweb": {
+        "name": "Web Application Development with Angular",
+        "date": "July 2024 - Present",
+        "description1": "Development of a portfolio website using Angular 19, SCSS, Signals, and RxJS",
+        "description2": "Use of Bootstrap for website layout",
+        "description3": "Creation of a responsive Home and Resume page using the Mobile First approach",
+        "description4": "Integration of the World of Warcraft API to build a personalized data dashboard"
+      }
+    },
+
+    "workexperience": {
+      "name": "Work Experience",
+      "navit": {
+        "name": "Web Application Development with Angular",
+        "place": "at Navit Cloud",
+        "date": "February 2022 - June 2024",
+        "description1": "Angular project using Figma for UI design",
+        "description2": "Backend support in Java/Springboot for an independent project",
+        "description3": "Development and documentation for Angular project using AsciiDoc"
+      },
+      "jeff": {
+        "name": "Backend Internship",
+        "place": "at MrJeff",
+        "date": "March 2016 - June 2016",
+        "description1": "Database access from Java applications",
+        "description2": "Error handling through unit testing",
+        "description3": "Version control using GIT and GitFlow"
+      },
+      "upv": {
+        "name": "Database Development Internship",
+        "place": "at Polytechnic University of Valencia",
+        "date": "March 2014 - June 2014",
+        "description1": "Database development in Microsoft Access",
+        "description2": "Version control using GIT and GitFlow",
+        "description3": "Database optimization"
+      }
+    },
+
+    "estudies": {
+      "name": "Academic Education",
+      "fps": {
+        "name": "Higher Degree in Multiplatform Programming",
+        "place": "at Ases Valencia",
+        "date": "September 2014 - June 2016",
+        "description1": "Java application development",
+        "description2": "Android application development",
+        "description3": "Database management (SQL and SQLite)"
+      },
+      "fpm": {
+        "name": "Intermediate Degree in Microcomputer Systems and Networks",
+        "place": "at IES Grao",
+        "date": "September 2012 - June 2014",
+        "description1": "Local network management",
+        "description2": "Web development using HTML, CSS, and JavaScript"
+      }
+    },
+
+    "complementary": {
+      "name": "Complementary Education",
+      "workshop": {
+        "name": "Advanced Workshop \"Explode your reel\"",
+        "place": "at Animum",
+        "date": "April 2024 - July 2024"
+      },
+      "master": {
+        "name": "Master in 3D Character Animation",
+        "place": "at Animum",
+        "date": "October 2021 - December 2023"
+      },
+      "esat": {
+        "name": "HND in Game Art",
+        "place": "at ESAT",
+        "date": "September 2017 - June 2020"
+      }
+    }
+  },
+
+  "projectshome": {
+    "wow": {
+      "name": "WoW Project",
+      "description": "This WoW Guild project is an application that integrates Angular and serverless functions on Vercel to manage and display a World of Warcraft guild roster in real time. It fetches up-to-date data via Blizzard’s API, highlights key members like Drakiria and Chumari, and sorts the rest by mScore. The Blizzard API calls are handled with Promise.all and chained calls due to its HATEOAS architecture. The app combines a serverless backend with a modern frontend to deliver a dynamic and effective experience for WoW fans."
+    },
+    "form": {
+      "name": "Form",
+      "description": "This project is an accessible form that validates entered data and stores it in either sessionStorage or localStorage depending on user selection. It then checks whether the stored data is still valid and displays it as cards. Each card includes a button to easily delete that entry."
+    },
+    "galery": {
+      "name": "Animation Gallery",
+      "description": "This gallery showcases several videos I created while studying 3D character animation."
+    }
+  },
+
+  "wow": {
+    "guild": "Guild"
+  },
+
+  "form": {
+    "name": "Name",
+    "lastname": "Last Name(s)",
+    "email": "Email",
+    "birthdate": "Birth Date",
+    "password": "Password",
+    "passwordconfirm": "Confirm Password",
+    "phone": "Phone",
+    "url": "URL",
+    "aboutyou": "About You",
+    "words": "Words",
+    "storagetype": "Storage Type",
+    "sessionstorage": "Save in session",
+    "localstorage": "Save in local",
+    "optional": "optional",
+    "submit": "Submit",
+
+    "placeholder": {
+      "name": "Enter your name",
+      "lastname": "Enter your last name",
+      "email": "email@example.com",
+      "birthdate": "dd/mm/yyyy",
+      "phone": "e.g. 123456789",
+      "url": "http://yourwebsite.com",
+      "aboutyou": "Tell us something about you..."
+    },
+
+    "error": {
+      "name": "Name is required (min. 2 letters)",
+      "lastname": "Last name is required (min. 2 letters)",
+      "email": {
+        "required": "Email is required",
+        "valid": "Enter a valid email",
+        "inuse": "Email already in use"
+      },
+      "birthdate": {
+        "required": "Birth date is required",
+        "minage": "You must be at least 13 years old"
+      },
+      "password": "Min. 8 characters with uppercase, lowercase, number and symbol",
+      "passwordconfirm": "Passwords do not match",
+      "phone": {
+        "required": "Phone number is required",
+        "valid": "Only numbers allowed"
+      },
+      "url": "Invalid URL",
+      "aboutyou": "Maximum 50 words allowed (current: "
+    }
+  },
+
+  "galery": {
+    "name": "Animation Gallery"
+  }
+}

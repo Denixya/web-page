@@ -12,22 +12,33 @@
 
   <div class="card-content">
     <p>
-      <strong>Nombre:</strong> {{ data()?.firstName }} {{ data()?.lastName }}
+      <strong>{{ "form.name" | translate }}:</strong> {{ data()?.firstName }}
+      {{ data()?.lastName }}
     </p>
-    <p><strong>Email:</strong> {{ data()?.email }}</p>
-    <p><strong>Fecha de nacimiento:</strong> {{ data()?.birthDate }}</p>
-    <p><strong>Teléfono:</strong> {{ data()?.phone }}</p>
+    <p>
+      <strong>{{ "form.email" | translate }}:</strong> {{ data()?.email }}
+    </p>
+    <p>
+      <strong>{{ "form.birthdate" | translate }}:</strong>
+      {{ data()?.birthDate }}
+    </p>
+    <p>
+      <strong>{{ "form.phone" | translate }}:</strong> {{ data()?.phone }}
+    </p>
     @if (data()?.url) {
       <p>
-        <strong>URL:</strong>
-        <a [href]="data()?.url" target="_blank">{{ data()?.url }}</a>
+        <strong>{{ "form.url" | translate }}:</strong>
+        <a [href]="data()?.url" target="_blank"> {{ data()?.url }}</a>
       </p>
     }
     @if (data()?.aboutYou) {
-      <p><strong>Sobre ti:</strong> {{ data()?.aboutYou }}</p>
+      <p>
+        <strong>{{ "form.aboutyou" | translate }}:</strong>
+        {{ data()?.aboutYou }}
+      </p>
     }
     <p>
-      <strong>Almacenamiento:</strong>
+      <strong>{{ "form.storagetype" | translate }}:</strong>
       {{ data()?.storage === "local" ? "LocalStorage" : "SessionStorage" }}
     </p>
   </div>

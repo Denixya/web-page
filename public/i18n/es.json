@@ -1,0 +1,182 @@
+{
+  "navbar": {
+    "home": "Inicio",
+    "cv": "Currículum",
+    "projects": "Proyectos",
+    "projectshome": "Inicio Proyectos",
+    "wow": "Proyecto WoW",
+    "form": "Formulario",
+    "gallery": "Galería"
+  },
+  "footer": {
+    "legal": "Todos los derechos reservados"
+  },
+  "card": {
+    "seemore": "Ver más..."
+  },
+
+  "home": {
+    "aboutme": "Sobre mí",
+    "description": "Desarrolladora web junior, apasionada por la tecnología y el diseño de experiencias digitales. Me adapto con rapidez a nuevos entornos y disfruto trabajando en equipo. Me motiva transformar ideas en soluciones web atractivas, siempre con entusiasmo y dedicación."
+  },
+
+  "cv": {
+    "aboutme": "Sobre mí",
+    "aboutme.description": "Apasionada por la tecnología desde temprana edad, me formé en el Grado Medio de Sistemas Microinformáticos y Redes, y en el Grado Superior de Desarrollo de Aplicaciones Multiplataforma, donde aprendí a programar en Java, SQL, HTML, CSS y JavaScript. Más adelante, amplié mi perfil como artista y animadora 3D, compaginando esta etapa con trabajo freelance en desarrollo de aplicaciones en Angular para una empresa extranjera. <br /><br /> Actualmente, estoy especializada en desarrollo Frontend con HTML, CSS, TypeScript y Angular, aprovechando herramientas como GitHub Copilot para optimizar la productividad. Me destaco por mi capacidad de adaptación, el trabajo en equipo y la iniciativa constante para seguir aprendiendo y afrontar nuevos desafíos.",
+    "aboutme.work": "Desarrolladora Frontend",
+    "aboutme.ubication": "Ubicación",
+    "aboutme.country": "España",
+    "skills": "Habilidades Profesionales",
+
+    "personalprojects": {
+      "name": "Proyectos Personales",
+      "angularweb": {
+        "name": "Desarrollo de Aplicaciones Web con Angular",
+        "date": "Julio 2024 - Presente",
+        "description1": "Desarrollo de una página web Portfolio con Angular 19, SCSS, Signal y RxJS",
+        "description2": "Uso de Boostrap para el Layout de la Web",
+        "description3": "Creación de una página de inicio y CV responsive empleando la metodología Mobile first",
+        "description4": "Uso de la API de World of Warcraft para la creación de un Dashboard con información personalizada"
+      }
+    },
+
+    "workexperience": {
+      "name": "Experiencia Laboral",
+      "navit": {
+        "name": "Desarrollo de Aplicaciones Web con Angular",
+        "place": "en Navit Cloud",
+        "date": "Febrero 2022 - Junio 2024",
+        "description1": "Proyecto en Angular utilizando Figma para maquetación",
+        "description2": "Soporte a backend en Java/Springboot para un proyecto independiente",
+        "description3": "Desarrollo y documentación para proyecto Angular con AsciiDoc"
+      },
+      "jeff": {
+        "name": "Prácticas en Backend",
+        "place": "en MrJeff",
+        "date": "Marzo 2016 - Junio 2016",
+        "description1": "Aceso a base de datos desde aplicaciones Java",
+        "description2": "Control de errores mediante tests unitarios",
+        "description3": "Uso de GIT y GitFlow para control de versiones"
+      },
+      "upv": {
+        "name": "Prácticas desarrollando bases de datos",
+        "place": "en la Universidad Politécnica de Valencia",
+        "date": "Marzo 2014 - Junio 2014",
+        "description1": "Desarrollo de bases de datos en Microsoft Access",
+        "description2": "Uso de GIT y GitFlow para control de versiones",
+        "description3": "Optimización de bases de datos"
+      }
+    },
+
+    "estudies": {
+      "name": "Formación Académica",
+      "fps": {
+        "name": "FP de Grado Superior en Programación Multiplataforma",
+        "place": "en Ases Valencia",
+        "date": "Septiembre 2014 - Junio 2016",
+        "description1": "Desarrollo de aplicaciones Java",
+        "description2": "Desarrollo de aplicaciones Android",
+        "description3": "Gestión de bases de datos (SQL y SQLite)"
+      },
+      "fpm": {
+        "name": "FP de Grado Medio en Sistemas Microinformáticos y Redes",
+        "place": "en IES Grao",
+        "date": "Septiembre 2012 - Junio 2014",
+        "description1": "Gestión de Redes locales",
+        "description2": "Desarrollo de aplicaciones Web con HTML, CSS y JavaScript"
+      }
+    },
+
+    "complementary": {
+      "name": "Formación Complementaria",
+      "workshop": {
+        "name": "Workshop Avanzado \"Explode your reel\"",
+        "place": "en Animum",
+        "date": "Abril 2024 - Julio 2024"
+      },
+      "master": {
+        "name": "Master en Animación de Personajes 3D",
+        "place": "en Animum",
+        "date": "Octubre 2021 - Diciembre 2023"
+      },
+      "esat": {
+        "name": "HND en Arte para Videojuegos",
+        "place": "en ESAT",
+        "date": "Septiembre 2017 - Junio 2020"
+      }
+    }
+  },
+
+  "projectshome": {
+    "wow": {
+      "name": "Proyecto WoW",
+      "description": "Este proyecto de WoW Guild es una aplicación que integra Angular y funciones serverless en Vercel para gestionar y mostrar en tiempo real el roster de un gremio de World of Warcraft. A través de llamadas a la API de Blizzard, se obtienen datos actualizados, se destacan miembros clave como Drakiria y Chumari, y se ordenan los demás por puntuación mScore. Las llamadas al api de Blizzard se combinan con Promise.all y se van encadenando llamadas debido a que presenta una arquitectura HATEOAS. La aplicación combina un backend sin servidor con una interfaz moderna, proporcionando una experiencia dinámica y eficaz para los aficionados de WoW"
+    },
+    "form": {
+      "name": "Formulario",
+      "description": "Este proyecto consiste en un formulario accesible que valida los datos introducidos y los guarda en el sessionStorage o localStorage según se le indique. Después, comprueba que los datos almacenados siguen siendo válidos para mostrarlos en pantalla en forma de tarjetas. Cada tarjeta incluye un botón que permite eliminar ese registro de forma sencilla"
+    },
+    "galery": {
+      "name": "Galería de Animaciones",
+      "description": "Esta galería recoge varios de los videos que realicé estudiando Animación de personajes 3D"
+    }
+  },
+
+  "wow": {
+    "guild": "Gremio"
+  },
+
+  "form": {
+    "name": "Nombre",
+    "lastname": "Apellido(s)",
+    "email": "Correo electrónico",
+    "birthdate": "Fecha de nacimiento",
+    "password": "Contraseña",
+    "passwordconfirm": "Confirmar contraseña",
+    "phone": "Teléfono",
+    "url": "URL",
+    "aboutyou": "Sobre ti",
+    "words": "Palabras",
+    "storagetype": "Tipo de almacenamiento",
+    "sessionstorage": "Guardar en sesión",
+    "localstorage": "Guardar en local",
+    "optional": "opcional",
+    "submit": "Enviar",
+
+    "placeholder": {
+      "name": "Introduce tu nombre",
+      "lastname": "Introduce tu apellido",
+      "email": "correo@ejemplo.com",
+      "birthdate": "dd/mm/aaaa",
+      "phone": "Ej. 123456789",
+      "url": "http://tuweb.com",
+      "aboutyou": "Cuéntanos algo sobre ti..."
+    },
+
+    "error": {
+      "name": "Nombre requerido (mín. 2 letras)",
+      "lastname": "Apellido requerido (mín. 2 letras)",
+      "email": {
+        "required": "Correo requerido",
+        "valid": "Introduce un correo válido",
+        "inuse": "Este correo ya está en uso"
+      },
+      "birthdate": {
+        "required": "Fecha de nacimiento requerida",
+        "minage": "Debes tener al menos 13 años"
+      },
+      "password": "Mín. 8 caracteres, con mayúscula, minúscula, número y símbolo",
+      "passwordconfirm": "Las contraseñas no coinciden",
+      "phone": {
+        "required": "Teléfono requerido",
+        "valid": "Solo números permitidos"
+      },
+      "url": "URL no válida",
+      "aboutyou": "Máximo 50 palabras permitidas (actual: "
+    }
+  },
+
+  "galery": {
+    "name": "Galería de Animaciones"
+  }
+}

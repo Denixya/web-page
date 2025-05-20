@@ -1,24 +1,18 @@
 <app-card
   [imageSrc]="'drakiria.png'"
-  [title]="'WoW Guild project'"
-  [description]="
-    'Este proyecto de WoW Guild es una aplicación que integra Angular y funciones serverless en Vercel para gestionar y mostrar en tiempo real el roster de un gremio de World of Warcraft. A través de llamadas a la API de Blizzard, se obtienen datos actualizados, se destacan miembros clave como Drakiria y Chumari, y se ordenan los demás por puntuación mScore. Las llamadas al api de Blizzard se combinan con Promise.all y se van encadenando llamadas debido a que presenta una arquitectura HATEOAS. La aplicación combina un backend sin servidor con una interfaz moderna, proporcionando una experiencia dinámica y eficaz para los aficionados de WoW.'
-  "
+  [title]="'projectshome.wow.name' | translate"
+  [description]="'projectshome.wow.description' | translate"
   [link]="'/projects/wow'"
 ></app-card>
 <app-card
   [imageSrc]="'form.png'"
-  [title]="'Formulario'"
-  [description]="
-    'Este proyecto consiste en un formulario accesible que valida los datos introducidos y los guarda en el sessionStorage o localStorage según se indique. Después, comprueba que los datos almacenados siguen siendo válidos para mostrarlos en pantalla en forma de tarjetas. Cada tarjeta incluye un botón que permite eliminar ese registro de forma sencilla. '
-  "
+  [title]="'projectshome.form.name' | translate"
+  [description]="'projectshome.form.description' | translate"
   [link]="'/projects/form'"
 ></app-card>
 <app-card
   [imageSrc]="'anim.png'"
-  [title]="'Galería de Animaciones'"
-  [description]="
-    'Esta galería recoge varios de los videos que realicé estudiando Animación de personajes 3D'
-  "
+  [title]="'projectshome.galery.name' | translate"
+  [description]="'projectshome.galery.description' | translate"
   [link]="'/projects/anim'"
 ></app-card>

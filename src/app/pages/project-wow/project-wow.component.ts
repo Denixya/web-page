@@ -3,11 +3,11 @@ import { WowGuildCardComponent } from '../../components/wow-guild-card/wow-guild
 import { WowGuildService } from '../../services/wow-guild.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { catchError, of } from 'rxjs';
-import { WowCharacter } from '../../components/wow-guild-card/models/wow-character.model';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-project-wow',
-  imports: [WowGuildCardComponent],
+  imports: [WowGuildCardComponent, TranslatePipe],
   templateUrl: './project-wow.component.html',
   styleUrl: './project-wow.component.scss',
 })

@@ -1,62 +1,68 @@
 <form [formGroup]="form()" (ngSubmit)="onSubmit()" class="container p-4">
   <div class="row mb-3">
     <div class="col-md-6">
-      <label for="firstName" class="form-label">Nombre</label>
+      <label for="firstName" class="form-label">{{
+        "form.name" | translate
+      }}</label>
       <input
         id="firstName"
         type="text"
         class="form-control"
         formControlName="firstName"
-        placeholder="Introduce tu nombre"
+        [placeholder]="'form.placeholder.name' | translate"
       />
       @if (getControl("firstName").touched && getControl("firstName").invalid) {
         <div class="text-danger small mt-1">
-          Nombre requerido (mín. 2 letras)
+          {{ "form.error.name" | translate }}
         </div>
       }
     </div>
 
     <div class="col-md-6">
-      <label for="lastName" class="form-label">Apellido(s)</label>
+      <label for="lastName" class="form-label">{{
+        "form.lastname" | translate
+      }}</label>
       <input
         id="lastName"
         type="text"
         class="form-control"
         formControlName="lastName"
-        placeholder="Introduce tu apellido"
+        [placeholder]="'form.placeholder.lastname' | translate"
       />
       @if (getControl("lastName").touched && getControl("lastName").invalid) {
         <div class="text-danger small mt-1">
-          Apellido requerido (mín. 2 letras)
+          {{ "form.error.lastname" | translate }}
         </div>
       }
     </div>
   </div>
 
   <div class="mb-3">
-    <label for="email" class="form-label">Correo electrónico</label>
+    <label for="email" class="form-label">{{ "form.email" | translate }}</label>
     <input
       id="email"
       type="email"
       class="form-control"
       formControlName="email"
-      placeholder="correo@ejemplo.com"
+      [placeholder]="'form.placeholder.email' | translate"
     />
     @if (getControl("email").touched && getControl("email").invalid) {
       <div class="text-danger small mt-1">
         @if (getControl("email").errors?.["email"]) {
-          Introduce un correo válido
+          {{ "form.error.email.valid" | translate }}
         } @else if (getControl("email").errors?.["duplicateEmail"]) {
-          Este correo ya está registrado
+          {{ "form.error.email.inuse" | translate }}
         } @else {
-          Correo requerido
+          {{ "form.error.email.required" | translate }}
         }
       </div>
     }
   </div>
 
   <div class="mb-3">
-    <label for="birthDate" class="form-label">Fecha de nacimiento</label>
+    <label for="birthDate" class="form-label">{{
+      "form.birthdate" | translate
+    }}</label>
     <input
       id="birthDate"
       type="date"
@@ -67,13 +73,17 @@
       getControl("birthDate").touched &&
       getControl("birthDate").errors?.["ageTooLow"]
     ) {
-      <div class="text-danger small mt-1">Debes tener al menos 13 años</div>
+      <div class="text-danger small mt-1">
+        {{ "form.error.birthdate.minage" | translate }}
+      </div>
     }
   </div>
 
   <div class="row mb-3">
     <div class="col-md-6">
-      <label for="password" class="form-label">Contraseña</label>
+      <label for="password" class="form-label">{{
+        "form.password" | translate
+      }}</label>
       <div class="input-group">
         <input
           id="password"
@@ -95,15 +105,15 @@
       </div>
       @if (getControl("password").touched && getControl("password").invalid) {
         <div class="text-danger small mt-1">
-          Mín. 8 caracteres, con mayúscula, minúscula, número y símbolo
+          {{ "form.error.password" | translate }}
         </div>
       }
     </div>
 
     <div class="col-md-6">
-      <label for="confirmPassword" class="form-label"
-        >Confirmar contraseña</label
-      >
+      <label for="confirmPassword" class="form-label">{{
+        "form.passwordconfirm" | translate
+      }}</label>
       <input
         id="confirmPassword"
         [type]="showPassword() ? 'text' : 'password'"
@@ -111,61 +121,75 @@
         formControlName="confirmPassword"
       />
       @if (form().touched && form().errors?.["passwordsMismatch"]) {
-        <div class="text-danger small mt-1">Las contraseñas no coinciden</div>
+        <div class="text-danger small mt-1">
+          {{ "form.error.passwordconfirm" | translate }}
+        </div>
       }
     </div>
   </div>
 
   <div class="mb-3">
-    <label for="phone" class="form-label">Teléfono</label>
+    <label for="phone" class="form-label">{{ "form.phone" | translate }}</label>
     <input
       id="phone"
       type="tel"
       class="form-control"
       formControlName="phone"
-      placeholder="Ej. 123456789"
+      [placeholder]="'form.placeholder.phone' | translate"
     />
     @if (getControl("phone").touched && getControl("phone").invalid) {
-      <div class="text-danger small mt-1">Solo números permitidos</div>
+      <div class="text-danger small mt-1">
+        {{ "form.error.phone.valid" | translate }}
+      </div>
     }
   </div>
 
   <div class="mb-3">
-    <label for="url" class="form-label">URL (opcional)</label>
+    <label for="url" class="form-label"
+      >{{ "form.url" | translate }} ({{ "form.optional" | translate }})</label
+    >
     <input
       id="url"
       type="url"
       class="form-control"
       formControlName="url"
-      placeholder="https://tuweb.com"
+      [placeholder]="'form.placeholder.url' | translate"
     />
     @if (getControl("url").touched && getControl("url").invalid) {
-      <div class="text-danger small mt-1">URL no válida</div>
+      <div class="text-danger small mt-1">
+        {{ "form.error.url" | translate }}
+      </div>
     }
   </div>
   <div class="mb-3">
-    <label for="aboutYou" class="form-label">Sobre ti (opcional)</label>
+    <label for="aboutYou" class="form-label"
+      >{{ "form.aboutyou" | translate }} ({{
+        "form.optional" | translate
+      }})</label
+    >
     <textarea
       id="aboutYou"
       class="form-control"
       rows="4"
       formControlName="aboutYou"
-      placeholder="Cuéntanos algo sobre ti..."
+      [placeholder]="'form.placeholder.aboutyou' | translate"
     ></textarea>
 
     @if (getControl("aboutYou").errors?.["maxWords"]) {
       <div class="text-danger small mt-1">
-        Máximo 50 palabras permitido (actual: {{ getAboutYouWordCount() }})
+        {{ ("form.error.aboutyou" | translate) + getAboutYouWordCount() + ")" }}
       </div>
     } @else {
       <div class="text-muted small mt-1">
-        Palabras: {{ getAboutYouWordCount() }}/50
+        {{ "form.words" | translate }}: {{ getAboutYouWordCount() }}/50
       </div>
     }
   </div>
 
   <div class="mb-4">
-    <label class="form-label d-block">Tipo de almacenamiento</label>
+    <label class="form-label d-block">{{
+      "form.storagetype" | translate
+    }}</label>
     <div class="form-check form-check-inline">
       <input
         id="session"
@@ -174,7 +198,9 @@
         formControlName="storage"
         value="session"
       />
-      <label for="session" class="form-check-label">Guardar en sesión</label>
+      <label for="session" class="form-check-label">{{
+        "form.sessionstorage" | translate
+      }}</label>
     </div>
     <div class="form-check form-check-inline">
       <input
@@ -184,10 +210,14 @@
         formControlName="storage"
         value="local"
       />
-      <label for="local" class="form-check-label">Guardar en local</label>
+      <label for="local" class="form-check-label">{{
+        "form.localstorage" | translate
+      }}</label>
     </div>
   </div>
-  <button type="submit" class="btn btn-primary w-100">Enviar</button>
+  <button type="submit" class="btn btn-primary w-100">
+    {{ "form.submit" | translate }}
+  </button>
 </form>
 
 <div class="card-container">

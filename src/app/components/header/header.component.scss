@@ -1,4 +1,4 @@
-@use '../../../styles/variables' as vars;
+@use "../../../styles/variables" as vars;
 
 .navbar-nav .nav-link {
   min-width: 120px;
@@ -11,10 +11,19 @@
 
 .nav-link:hover {
   background-color: vars.$card-bg-color;
-  transition: background-color 0.5s ease, color 0.5s ease;
+  transition:
+    background-color 0.5s ease,
+    color 0.5s ease;
 }
-
 
 .dropdown-item.active {
   background-color: vars.$card-bg-color;
+}
+
+.nav-centered-lg {
+  @media (min-width: 992px) {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
