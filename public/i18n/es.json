@@ -43,12 +43,17 @@
     "workexperience": {
       "name": "Experiencia Laboral",
       "navit": {
-        "name": "Desarrollo de Aplicaciones Web con Angular",
+        "name": "Desarrollador Frontend Angular",
         "place": "en Navit Cloud",
         "date": "Febrero 2022 - Junio 2024",
-        "description1": "Proyecto en Angular utilizando Figma para maquetación",
-        "description2": "Soporte a backend en Java/Springboot para un proyecto independiente",
-        "description3": "Desarrollo y documentación para proyecto Angular con AsciiDoc"
+        "description1": "Participación en proyectos de e-commerce y paneles de administración de tiendas online, diseñando y desarrollando interfaces de usuario responsive con <strong>Angular 16/17/18</strong>",
+        "description2": "Arquitectura de aplicaciones modulables con <strong>Lazy Loading</strong>, <strong>Angular CLI</strong>, <strong>TypeScript</strong> y <strong>RxJS</strong> para gestión reactiva de datos",
+        "description3": "Construcción de formularios dinámicos y validaciones avanzadas usando <strong>Reactive Forms</strong> y <strong>Validators</strong> personalizados",
+        "description4": "Maquetación y estilos con <strong>HTML5</strong>, <strong>SCSS</strong>, <strong>Bootstrap</strong> y <strong>Figma</strong>, garantizando accesibilidad (WCAG) y diseño adaptativo (mobile-first)",
+        "description5": "Consumo de APIs RESTful mediante <strong>HttpClient</strong>, gestionando manejo de errores",
+        "description6": "Integración continua y despliegue automático en <strong>OpenShift</strong> (pipelines CI/CD) y orquestación de releases con <strong>ArgoCD</strong>",
+        "description7": "Colaboración diaria con equipos de DevOps y backend para soporte full-stack, resolución de incidencias y optimización de rendimiento",
+        "description8": "Control de versiones con <strong>Git</strong> (GitHub), code reviews y desarrollo de pruebas unitarias con <strong>Jasmine/Karma</strong>"
       },
       "jeff": {
         "name": "Prácticas en Backend",
@@ -63,8 +68,7 @@
         "place": "en la Universidad Politécnica de Valencia",
         "date": "Marzo 2014 - Junio 2014",
         "description1": "Desarrollo de bases de datos en Microsoft Access",
-        "description2": "Uso de GIT y GitFlow para control de versiones",
-        "description3": "Optimización de bases de datos"
+        "description2": "Optimización de bases de datos"
       }
     },
 
