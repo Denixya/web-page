@@ -43,12 +43,17 @@
     "workexperience": {
       "name": "Work Experience",
       "navit": {
-        "name": "Web Application Development with Angular",
+        "name": "Angular Frontend Developer",
         "place": "at Navit Cloud",
         "date": "February 2022 - June 2024",
-        "description1": "Angular project using Figma for UI design",
-        "description2": "Backend support in Java/Springboot for an independent project",
-        "description3": "Development and documentation for Angular project using AsciiDoc"
+        "description1": "Involved in e-commerce projects and admin dashboards for online stores, designing and developing responsive user interfaces with <strong>Angular 16/17/18</strong>",
+        "description2": "Modular application architecture using <strong>Lazy Loading</strong>, <strong>Angular CLI</strong>, <strong>TypeScript</strong>, and <strong>RxJS</strong> for reactive data management",
+        "description3": "Built dynamic forms and advanced validations using <strong>Reactive Forms</strong> and custom <strong>Validators</strong>",
+        "description4": "Layout and styling with <strong>HTML5</strong>, <strong>SCSS</strong>, <strong>Bootstrap</strong> and <strong>Figma</strong>, ensuring accessibility (WCAG) and adaptive design (mobile-first)",
+        "description5": "Consumed RESTful APIs using <strong>HttpClient</strong>, with robust error handling",
+        "description6": "Continuous integration and automated deployment on <strong>OpenShift</strong> (CI/CD pipelines) and release orchestration with <strong>ArgoCD</strong>",
+        "description7": "Daily collaboration with DevOps and backend teams for full-stack support, incident resolution, and performance optimization",
+        "description8": "Version control with <strong>Git</strong> (GitHub), code reviews, and unit test development with <strong>Jasmine/Karma</strong>"
       },
       "jeff": {
         "name": "Backend Internship",
@@ -63,8 +68,7 @@
         "place": "at Polytechnic University of Valencia",
         "date": "March 2014 - June 2014",
         "description1": "Database development in Microsoft Access",
-        "description2": "Version control using GIT and GitFlow",
-        "description3": "Database optimization"
+        "description2": "Database optimization"
       }
     },
 
