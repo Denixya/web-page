@@ -1,24 +1,53 @@
-<div class="cardDiv container my-3 my-lg-5">
-  <div class="row align-items-center">
-    <!-- Imagen: Ocupa 1/3 en pantallas grandes y se posiciona arriba en pantallas pequeñas -->
-    <div class="col-12 col-md-4 mb-3 mb-md-0">
-      <img
-        [src]="imageSrc()"
-        [attr.alt]="imageAlt()"
-        class="img-fluid rounded"
-      />
-    </div>
-    <!-- Texto: Ocupa 2/3 en pantallas grandes y se posiciona abajo en pantallas pequeñas -->
-    <div class="col-12 col-md-8 textDiv text-center text-md-start">
-      <h2 class="mb-4 text-center">{{ title() }}</h2>
-      <p>{{ description() }}</p>
-      @if (link()) {
-        <div class="d-flex align-self-end mt-3">
-          <a [routerLink]="link()" class="custom-link">{{
-            "card.seemore" | translate
-          }}</a>
-        </div>
-      }
+@if (animation()) {
+  <div class="cardDiv container my-3 my-lg-5 card-track" #cardTrack>
+    <div class="row align-items-center">
+      <!-- Imagen: Ocupa 1/3 en pantallas grandes y se posiciona arriba en pantallas pequeñas -->
+      <div class="col-12 col-md-4 mb-3 mb-md-0">
+        <!-- data-aos="fade-right" data-aos-offset="250" -->
+        <img
+          [src]="imageSrc()"
+          [attr.alt]="imageAlt()"
+          class="img-fluid rounded"
+        />
+      </div>
+      <!-- Texto: Ocupa 2/3 en pantallas grandes y se posiciona abajo en pantallas pequeñas -->
+      <div class="col-12 col-md-8 textDiv text-center text-md-start">
+        <h2 class="mb-4 text-center">{{ title() }}</h2>
+        <p>{{ description() }}</p>
+        @if (link()) {
+          <div class="d-flex align-self-end mt-3">
+            <a [routerLink]="link()" class="custom-link">{{
+              "card.seemore" | translate
+            }}</a>
+          </div>
+        }
+      </div>
     </div>
   </div>
-</div>
+} @else {
+  <div class="cardDiv container my-3 my-lg-5">
+    <div class="row align-items-center">
+      <!-- Imagen: Ocupa 1/3 en pantallas grandes y se posiciona arriba en pantallas pequeñas -->
+      <div class="col-12 col-md-4 mb-3 mb-md-0">
+        <!-- data-aos="fade-right" data-aos-offset="250" -->
+        <img
+          [src]="imageSrc()"
+          [attr.alt]="imageAlt()"
+          class="img-fluid rounded"
+        />
+      </div>
+      <!-- Texto: Ocupa 2/3 en pantallas grandes y se posiciona abajo en pantallas pequeñas -->
+      <div class="col-12 col-md-8 textDiv text-center text-md-start">
+        <h2 class="mb-4 text-center">{{ title() }}</h2>
+        <p>{{ description() }}</p>
+        @if (link()) {
+          <div class="d-flex align-self-end mt-3">
+            <a [routerLink]="link()" class="custom-link">{{
+              "card.seemore" | translate
+            }}</a>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+}
