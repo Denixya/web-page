@@ -1,1 +1,10 @@
-<p>project-pokedex works!</p>
+<div class="cards-container">
+  @for (pokemon of pokemonList(); track pokemon.id) {
+    <app-card
+      [imageSrc]="pokemon.sprites.front_default"
+      [imageAlt]="pokemon.name"
+      [title]="pokemon.name"
+      [description]="getTypes(pokemon)"
+    />
+  }
+</div>
