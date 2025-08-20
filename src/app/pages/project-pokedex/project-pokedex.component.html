@@ -1,10 +1,22 @@
 <div class="cards-container">
-  @for (pokemon of pokemonList(); track pokemon.id) {
-    <app-card
-      [imageSrc]="pokemon.sprites.front_default"
-      [imageAlt]="pokemon.name"
-      [title]="pokemon.name"
-      [description]="getTypes(pokemon)"
-    />
+  @if (pokemonList().length > 0) {
+    <div class="row gx-4 gy-4 itemContainer">
+      @for (pokemon of pokemonList(); track pokemon.id) {
+        <div class="col-12 col-md-6">
+          <app-card
+            [imageSrc]="'pokemon.sprites.front_default'"
+            [imageAlt]="pokemon.name"
+            [title]="pokemon.name"
+            [description]="'getTypes(pokemon)'"
+          />
+        </div>
+      }
+    </div>
+  } @else {
+    <div class="loading-container">
+      <div class="spinner-border text-light" role="status">
+        <span class="visually-hidden">Cargando...</span>
+      </div>
+    </div>
   }
 </div>

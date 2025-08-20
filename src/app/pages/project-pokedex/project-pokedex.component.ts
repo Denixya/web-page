@@ -1,5 +1,8 @@
-import { Component, input } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CardComponent } from '../../components/card/card.component';
+import { PokedexService } from '../../services/pokedex-store.service';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { catchError, of } from 'rxjs';
 
 @Component({
   selector: 'app-project-pokedex',
@@ -8,13 +11,17 @@ import { CardComponent } from '../../components/card/card.component';
   styleUrl: './project-pokedex.component.scss',
 })
 export class ProjectPokedexComponent {
-  pokemonList = input<any[] | undefined>();
+  private readonly pokedexService = inject(PokedexService);
 
-  get list(): any[] {
-    return this.pokemonList() ?? [];
-  }
-
-  getTypes(pokemon: any): string {
-    return pokemon.types.map((t: any) => t.type.name).join(', ');
-  }
+  pokemonList = toSignal(
+    this.pokedexService.getPokemons().pipe(
+      catchError((error) => {
+        console.error('Error fetching pokedex:', error);
+        return of([]);
+      }),
+    ),
+    {
+      initialValue: [],
+    },
+  );
 }
