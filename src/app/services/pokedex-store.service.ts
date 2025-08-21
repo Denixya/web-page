@@ -1,10 +1,10 @@
 import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { PokemonItem } from '../pages/project-pokedex/models/pokemon-item.model';
+import { PokemonItem } from '../components/poke-table/models/pokemon-item.model';
 
 @Injectable({ providedIn: 'root' })
-export class PokedexService {
+export class PokedexStoreService {
   // pipe(arg0: any): Observable<unknown> | import('rxjs').Subscribable<unknown> {
   //   throw new Error('Method not implemented.');
   // }
