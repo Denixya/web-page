@@ -12,7 +12,7 @@ export class PokedexService {
   private readonly http = inject(HttpClient);
 
   getPokemons(): Observable<PokemonItem[]> {
-    return this.http.get<any[]>(this.apiUrl);
+    return this.http.get<PokemonItem[]>(this.apiUrl);
   }
 
   // getGuildRoster(): Observable<WowCharacter[]> {
