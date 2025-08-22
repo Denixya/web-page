@@ -1,48 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
-import { PokemonItem } from './models/pokemon-item.model';
-import { PokeTypeItem } from './models/poketype-item.model';
+import { PokeItem } from './models/poke-item.model';
+import { TitleCasePipe } from '@angular/common';
 
 /**
  * @title Pokemon Table
  */
 @Component({
   selector: 'app-poke-table',
-  imports: [MatTableModule],
+  imports: [MatTableModule, TitleCasePipe],
   templateUrl: './poke-table.component.html',
   styleUrl: './poke-table.component.scss',
 })
 export class PokeTableComponent {
-  displayedColumns: string[] = ['sprite', 'id', 'name', 'type'];
-  dataSource = POKEMON_DATA;
+  displayedColumns: string[] = ['id', 'sprite', 'name', 'type'];
+  dataSource = input<PokeItem[]>([]);
 }
-
-const POKEMON_DATA: PokemonItem[] = [
-  {
-    id: 1,
-    name: 'Bulbasaur',
-    height: 10,
-    weight: 10,
-    typeId: [1],
-    sprite:
-      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png',
-  },
-  {
-    id: 4,
-    name: 'Charmander',
-    height: 10,
-    weight: 10,
-    typeId: [1],
-    sprite:
-      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png',
-  },
-  {
-    id: 7,
-    name: 'Squirtle',
-    height: 10,
-    weight: 10,
-    typeId: [1],
-    sprite:
-      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png',
-  },
-];
+//https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png
