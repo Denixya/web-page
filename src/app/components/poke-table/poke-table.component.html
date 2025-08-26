@@ -1,8 +1,6 @@
+<app-ng-dialog-button></app-ng-dialog-button>
 <table mat-table [dataSource]="dataSource()" class="mat-elevation-z8">
-  <!--- Note that these columns can be defined in any order.
-        The actual rendered columns are set as a property on the row definition" -->
-
-  <!-- Position Column -->
+  <!-- No. Column -->
   <ng-container matColumnDef="id">
     <th mat-header-cell *matHeaderCellDef>No.</th>
     <td mat-cell *matCellDef="let element">{{ element.id }}</td>
