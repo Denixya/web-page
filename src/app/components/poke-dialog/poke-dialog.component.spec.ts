@@ -1,18 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NgDialogComponent } from './ng-dialog.component';
+import { PokeDialog } from './poke-dialog.component';
 
 describe('NgDialogComponent', () => {
-  let component: NgDialogComponent;
-  let fixture: ComponentFixture<NgDialogComponent>;
+  let component: PokeDialog;
+  let fixture: ComponentFixture<PokeDialog>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NgDialogComponent]
-    })
-    .compileComponents();
+      imports: [PokeDialog],
+    }).compileComponents();
 
-    fixture = TestBed.createComponent(NgDialogComponent);
+    fixture = TestBed.createComponent(PokeDialog);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

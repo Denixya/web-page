@@ -1,4 +1,3 @@
-<app-ng-dialog-button></app-ng-dialog-button>
 <table mat-table [dataSource]="dataSource()" class="mat-elevation-z8">
   <!-- No. Column -->
   <ng-container matColumnDef="id">
@@ -29,12 +28,10 @@
     <td mat-cell *matCellDef="let element">{{ element.name | titlecase }}</td>
   </ng-container>
 
-  <!-- Type Column -->
-  <ng-container matColumnDef="type">
-    <th mat-header-cell *matHeaderCellDef>Type</th>
-    <td mat-cell *matCellDef="let element">{{ element.type }}</td>
-  </ng-container>
-
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  <tr
+    mat-row
+    *matRowDef="let row; columns: displayedColumns"
+    (click)="openDialog(row)"
+    class="cursor-pointer"
+  ></tr>
 </table>

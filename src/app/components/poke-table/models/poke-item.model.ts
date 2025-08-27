@@ -3,6 +3,10 @@ export interface PokeItem {
   name: string;
   height: number;
   weight: number;
-  typeId: number[];
-  sprite: string;
+  type: PokeType[];
+}
+
+export interface PokeType {
+  name: string;
+  id: number;
 }

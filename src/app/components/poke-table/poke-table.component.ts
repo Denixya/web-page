@@ -1,20 +1,26 @@
-import { Component, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
 import { PokeItem } from './models/poke-item.model';
 import { TitleCasePipe } from '@angular/common';
-import { NgDialogButtonComponent } from '../ng-dialog/ng-dialog.component';
+import { PokeDialog } from '../poke-dialog/poke-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
-/**
- * @title Pokemon Table
- */
 @Component({
   selector: 'app-poke-table',
-  imports: [MatTableModule, TitleCasePipe, NgDialogButtonComponent],
+  imports: [MatTableModule, TitleCasePipe],
   templateUrl: './poke-table.component.html',
   styleUrl: './poke-table.component.scss',
 })
 export class PokeTableComponent {
-  displayedColumns: string[] = ['id', 'sprite', 'name', 'type'];
+  private dialog = inject(MatDialog);
+
+  displayedColumns: string[] = ['id', 'sprite', 'name'];
   dataSource = input<PokeItem[]>([]);
+
+  openDialog(pokemon: PokeItem) {
+    this.dialog.open(PokeDialog, {
+      width: '500px',
+      data: pokemon,
+    });
+  }
 }
-//https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png

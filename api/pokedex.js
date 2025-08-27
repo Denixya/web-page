@@ -28,21 +28,16 @@ export default async function handler(req, res) {
         }
 
         const data = await res.json();
+
         return {
           id: data.id,
           name: data.name,
           height: data.height,
           weight: data.weight,
-          types: data.types.map((t) => ({
-            slot: t.slot,
-            type: {
-              name: t.type.name,
-              url: t.type.url,
-            },
+          type: data.types.map((t) => ({
+            name: t.type.name,
+            id: +t.type.url.split("/").slice(-2, -1)[0],
           })),
-          sprites: {
-            front_default: data.sprites.front_default,
-          },
         };
       }),
     );
