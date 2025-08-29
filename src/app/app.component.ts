@@ -43,6 +43,10 @@ export class AppComponent {
             link: '/projects/wow',
           },
           {
+            label: this.#translate.instant('navbar.pokedex'),
+            link: '/projects/pokedex',
+          },
+          {
             label: this.#translate.instant('navbar.form'),
             link: '/projects/form',
           },

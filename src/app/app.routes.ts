@@ -29,6 +29,13 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'projects/pokedex',
+    loadComponent: () =>
+      import('./pages/project-pokedex/project-pokedex.component').then(
+        (c) => c.ProjectPokedexComponent,
+      ),
+  },
+  {
     path: 'projects/form',
     loadComponent: () =>
       import('./pages/form-page/form-page.component').then(

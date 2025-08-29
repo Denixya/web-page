@@ -5,6 +5,7 @@
     "projects": "Projects",
     "projectshome": "Projects Home",
     "wow": "WoW Project",
+    "pokedex": "Pokedex",
     "form": "Form",
     "gallery": "Gallery"
   },
@@ -115,6 +116,10 @@
     "wow": {
       "name": "WoW Project",
       "description": "This WoW Guild project is an application that integrates Angular and serverless functions on Vercel to manage and display a World of Warcraft guild roster in real time. It fetches up-to-date data via Blizzard’s API, highlights key members like Drakiria and Chumari, and sorts the rest by mScore. The Blizzard API calls are handled with Promise.all and chained calls due to its HATEOAS architecture. The app combines a serverless backend with a modern frontend to deliver a dynamic and effective experience for WoW fans."
+    },
+    "pokedex": {
+      "name": "Pokedex Project",
+      "description": "Pokedex description"
     },
     "form": {
       "name": "Form",

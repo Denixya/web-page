@@ -1,0 +1,5 @@
+@if (pokemonList().length > 0) {
+  <app-poke-table [dataSource]="pokemonList()"></app-poke-table>
+} @else {
+  <app-loading-message></app-loading-message>
+}

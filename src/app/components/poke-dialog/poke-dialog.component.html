@@ -1,0 +1,38 @@
+<mat-dialog-content>
+  <button class="close-btn" (click)="closeDialog()">
+    <i class="bi bi-x-circle"></i>
+  </button>
+  <div class="pokeDialogContainer d-flex flex-column flex-md-row">
+    <div class="imgContainer">
+      <img
+        class="pokeArt"
+        [src]="
+          'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/' +
+          data.id +
+          '.png'
+        "
+        alt="{{ data.name | titlecase }}"
+        media="(max-width: 760px)"
+      />
+      <div class="typeContainer d-flex flex-row justify-content-center">
+        @for (t of data.type; track t.name) {
+          <img
+            [src]="
+              'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/types/generation-viii/sword-shield/' +
+              t.id +
+              '.png'
+            "
+            [alt]="t.name"
+          />
+        }
+      </div>
+    </div>
+    <div class="pokeInfoContainer">
+      <h2 mat-dialog-title>{{ data.name | titlecase }}</h2>
+      <ul>
+        <li>{{ data.height / 10 }} m</li>
+        <li>{{ data.weight / 10 }} kg</li>
+      </ul>
+    </div>
+  </div>
+</mat-dialog-content>
