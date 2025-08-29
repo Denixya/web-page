@@ -1,3 +1,24 @@
 table {
   width: 100%;
 }
+
+/* Saltos con hover */
+tr:hover .sprite {
+  animation: bounce 0.45s infinite;
+}
+
+/* Saltos con focus */
+tr:focus-within .sprite {
+  animation: bounce 0.45s infinite;
+}
+
+/* Animación */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}

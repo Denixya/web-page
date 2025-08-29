@@ -10,6 +10,7 @@
     <th mat-header-cell *matHeaderCellDef>Sprite</th>
     <td mat-cell *matCellDef="let element">
       <img
+        class="sprite"
         [src]="
           'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' +
           element.id +
@@ -33,5 +34,9 @@
     *matRowDef="let row; columns: displayedColumns"
     (click)="openDialog(row)"
     class="cursor-pointer"
+    (keydown.enter)="openDialog(row)"
+    (keydown.space)="openDialog(row)"
+    tabindex="0"
+    role="button"
   ></tr>
 </table>
