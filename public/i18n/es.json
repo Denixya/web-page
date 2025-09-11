@@ -119,7 +119,7 @@
     },
     "pokedex": {
       "name": "Proyecto Pokedex",
-      "description": "Descripción pokedex"
+      "description": "Aplicación que consume datos de la API de PokeApi a través de una función serverless en Vercel. Muestra los 151 Pokémon originales en una tabla interactiva y accesible, permitiendo abrir una modal con información detallada de cada uno."
     },
     "form": {
       "name": "Formulario",
