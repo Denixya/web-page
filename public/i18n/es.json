@@ -34,28 +34,18 @@
       "angularweb": {
         "name": "Desarrollo de Aplicaciones Web con Angular",
         "date": "Julio 2024 - Presente",
-        "description1": "Desarrollo de una página web Portfolio con Angular 19, SCSS, Signal y RxJS",
-        "description2": "Uso de Boostrap para el Layout de la Web",
-        "description3": "Creación de una página de inicio y CV responsive empleando la metodología Mobile first",
-        "description4": "Uso de la API de World of Warcraft para la creación de un Dashboard con información personalizada"
+        "description1": "Arquitectura de una aplicación porfolio modulable con Lazy Loading, Angular CLI, TypeScript y RxJS para gestión reactiva de datos",
+        "description2": "Maquetación y estilos con HTML5, SCSS, Bootstrap y Figma, garantizando accesibilidad (WCAG AA) y diseño adaptativo",
+        "description3": "Implementación de diseño responsive en toda la aplicación, empleando la metodología Mobile first",
+        "description4": "Construcción de formularios dinámicos y validaciones avanzadas usando Reactive Forms y Validators personalizados",
+        "description5": "Consumo de APIs RESTful mediante HttpClient, gestionando manejo de errores",
+        "description6": "Integración con funciones serverless (Vercel) y uso de lógica asincrónica (async/await) para mostrar datos en interfaces interactivas y accesibles",
+        "description7": "Control de versiones con Git (GitHub), code reviews y desarrollo de pruebas unitarias con Jasmine/Karma"
       }
     },
 
     "workexperience": {
       "name": "Experiencia Laboral",
-      "navit": {
-        "name": "Desarrollador Frontend Angular",
-        "place": "en Navit Cloud",
-        "date": "Febrero 2022 - Junio 2024",
-        "description1": "Participación en proyectos de e-commerce y paneles de administración de tiendas online, diseñando y desarrollando interfaces de usuario responsive con <strong>Angular 16/17/18</strong>",
-        "description2": "Arquitectura de aplicaciones modulables con <strong>Lazy Loading</strong>, <strong>Angular CLI</strong>, <strong>TypeScript</strong> y <strong>RxJS</strong> para gestión reactiva de datos",
-        "description3": "Construcción de formularios dinámicos y validaciones avanzadas usando <strong>Reactive Forms</strong> y <strong>Validators</strong> personalizados",
-        "description4": "Maquetación y estilos con <strong>HTML5</strong>, <strong>SCSS</strong>, <strong>Bootstrap</strong> y <strong>Figma</strong>, garantizando accesibilidad (WCAG) y diseño adaptativo (mobile-first)",
-        "description5": "Consumo de APIs RESTful mediante <strong>HttpClient</strong>, gestionando manejo de errores",
-        "description6": "Integración continua y despliegue automático en <strong>OpenShift</strong> (pipelines CI/CD) y orquestación de releases con <strong>ArgoCD</strong>",
-        "description7": "Colaboración diaria con equipos de DevOps y backend para soporte full-stack, resolución de incidencias y optimización de rendimiento",
-        "description8": "Control de versiones con <strong>Git</strong> (GitHub), code reviews y desarrollo de pruebas unitarias con <strong>Jasmine/Karma</strong>"
-      },
       "jeff": {
         "name": "Prácticas en Backend",
         "place": "en MrJeff",
